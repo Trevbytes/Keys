@@ -1,6 +1,16 @@
 /*---------------------------------------------Google Fonts*/
 @import url("https://fonts.googleapis.com/css2?family=Leckerli+One&family=Open+Sans:wght@600&display=swap");
 
+
+.piano-container{
+    border: 20px solid black;
+    padding: 0;
+}
+
+.song-info {
+    background-color: black;
+    color: white;
+}
 /*--------------Piano CSS code heavily influenced by a YouTube tutorial by Kyle.  https://www.youtube.com/watch?v=vjco5yKZpU8 */
 *::before,
 *::after {
@@ -8,15 +18,15 @@
 }
 
 body {
-  margin: 0;
   min-height: 100vh;
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   align-items: center;
 }
 
 .piano {
   display: flex;
+  height: calc(var(--width) * 4);
 }
 
 .key {
