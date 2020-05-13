@@ -18,27 +18,37 @@
   </head>
 
   <body>
-    <div class="container">
-      <div class="row flex-nowrap">
-        <div class="col-xs-1 col-md-1">
+    <div class="make-larger-info container">
+      <div class="row">
+        <div class="col">
+          <h2>Welcome to Keys</h2>
+          <p>
+            Unfortunately your screen is currently not wide enough to use the
+            Keys piano. Please rotate your screen or use a larger device
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="container page-content">
+      <div class="row flex-nowrap header">
+        <div class="col-2 my-auto mx-auto">
+          <i class="fas fa-music"></i>
+          <i class="fas fa-music"></i>
           <i class="fas fa-music"></i>
         </div>
-        <div class="col-xs-3 col-md-2">
+        <div class="col page-title">
           <h1>Keys</h1>
         </div>
-        <div class="col-xs-8 col-md-5">
+        <div class="col my-auto">
           Game Info
         </div>
       </div>
-      <div class="row"></div>
-      <div class="col-sm-12 col-md-8 song-info">
-        Reset
-      </div>
-    </div>
-    <div class="container">
       <div class="row">
-        <div class="col-sm-12 col-md-8 piano-container">
-          <div class="piano">
+        <div class="col piano-container">
+          <div class="col song-info">
+            <span>Reset</span><span id="song">Song: Happy Birthday</span>
+          </div>
+          <div class="col piano">
             <div class="key white"></div>
             <div class="key black"></div>
             <div class="key white"></div>
@@ -93,13 +103,13 @@
       crossorigin="anonymous"
     ></script>
     <!-- Load Jasmine Framework -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.7.0/jasmine.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.7.0/jasmine.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.7.0/jasmine-html.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.7.0/boot.js"></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.7.0/jasmine.css"
-    />
+    /> -->
     <!--Script for audio created by Keith Horwood, Github user keithwhor. https://github.com/keithwhor/audiosynth -->
     <script src="audiosynth.js"></script>
     <!--My Script-->

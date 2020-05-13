@@ -1,15 +1,24 @@
 /*---------------------------------------------Google Fonts*/
 @import url("https://fonts.googleapis.com/css2?family=Leckerli+One&family=Open+Sans:wght@600&display=swap");
 
+body {
+  background-color: #ebc246;
+  font-family: "Open Sans";
+}
+.piano-container {
+  padding: 0;
+}
 
-.piano-container{
-    border: 20px solid black;
-    padding: 0;
+.page-title {
+      font-family: "Leckerli One";
+}
+.header {
+  border-bottom: 2px solid black;
 }
 
 .song-info {
-    background-color: black;
-    color: white;
+  /* background-color: black;
+  color: white; */
 }
 /*--------------Piano CSS code heavily influenced by a YouTube tutorial by Kyle.  https://www.youtube.com/watch?v=vjco5yKZpU8 */
 *::before,
@@ -18,15 +27,22 @@
 }
 
 body {
-  min-height: 100vh;
-  /* display: flex; */
   justify-content: center;
-  align-items: center;
+  /* min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center; */
 }
 
+#song {
+  float: right;
+}
 .piano {
   display: flex;
+  /* border: 5px solid black; */
   height: calc(var(--width) * 4);
+  justify-content: center;
+  /* background-color: black; */
 }
 
 .key {
@@ -35,17 +51,17 @@ body {
 }
 
 .white {
-  --width: 80px;
+  --width: 45px;
   background-color: white;
   border: 1px solid #333;
 }
 
-.white.active{
-    background-color: #ccc;
+.white.active {
+  background-color: #ccc;
 }
 
 .black {
-  --width: 45px;
+  --width: 27px;
   background-color: black;
   border: 1px solid #333;
   margin-left: calc(var(--width) / -2);
@@ -54,5 +70,65 @@ body {
 }
 
 .black.active {
-    background-color: #333;
+  background-color: #333;
+}
+
+@media screen and (min-width: 1000px) {
+  .white {
+    --width: 80px;
+    background-color: white;
+    border: 1px solid #333;
+  }
+
+  .black {
+    --width: 50px;
+    background-color: black;
+    border: 1px solid #333;
+    margin-left: calc(var(--width) / -2);
+    margin-right: calc(var(--width) / -2);
+    z-index: 2;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .white {
+    --width: 100px;
+    background-color: white;
+    border: 1px solid #333;
+  }
+
+  .black {
+    --width: 60px;
+    background-color: black;
+    border: 1px solid #333;
+    margin-left: calc(var(--width) / -2);
+    margin-right: calc(var(--width) / -2);
+    z-index: 2;
+  }
+}
+
+  .make-larger-info {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(78, 78, 78); /* Black background with opacity */
+    z-index: 4; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+    color: whitesmoke;
+    padding-top: 60%;
+  }
+
+@media screen and (max-width: 550px) {
+  .page-content {
+    display: none;
+  }
+
+  .make-larger-info {
+    display: block; /* Hidden by default */
+  }
 }
