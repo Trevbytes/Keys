@@ -4,19 +4,19 @@ const keys4 = document.querySelectorAll(".key4");
 const keys5 = document.querySelectorAll(".key5");
 
 keys3.forEach((key3) => {
-  key3.addEventListener("click", () =>
+  key3.addEventListener("mousedown", () =>
     Synth.play(0, key3.id.substr(1, 3), 3, 2)
   );
 });
 
 keys4.forEach((key4) => {
-  key4.addEventListener("click", () =>
+  key4.addEventListener("mousedown", () =>
     Synth.play(0, key4.id.substr(1, 3), 4, 2)
   );
 });
 
 keys5.forEach((key5) => {
-  key5.addEventListener("click", () =>
+  key5.addEventListener("mousedown", () =>
     Synth.play(0, key5.id.substr(1, 3), 5, 2)
   );
 });
@@ -30,6 +30,13 @@ for (var i = 0; i < keys3.length; i++) {
 
   // Remove 'open" class with a delay
   keys3[i].addEventListener("mouseup", function () {
+    var node = this; // Allows us to access 'this' within the timeout function
+    setTimeout(function () {
+      node.classList.remove("active");
+    }, 300);
+  });
+
+  keys3[i].addEventListener("mouseout", function () {
     var node = this; // Allows us to access 'this' within the timeout function
     setTimeout(function () {
       node.classList.remove("active");
@@ -50,6 +57,13 @@ for (var i = 0; i < keys4.length; i++) {
       node.classList.remove("active");
     }, 300);
   });
+
+  keys4[i].addEventListener("mouseout", function () {
+    var node = this; // Allows us to access 'this' within the timeout function
+    setTimeout(function () {
+      node.classList.remove("active");
+    }, 300);
+  });
 }
 
 for (var i = 0; i < keys5.length; i++) {
@@ -60,6 +74,13 @@ for (var i = 0; i < keys5.length; i++) {
 
   // Remove 'open" class with a delay
   keys5[i].addEventListener("mouseup", function () {
+    var node = this; // Allows us to access 'this' within the timeout function
+    setTimeout(function () {
+      node.classList.remove("active");
+    }, 300);
+  });
+
+  keys5[i].addEventListener("mouseout", function () {
     var node = this; // Allows us to access 'this' within the timeout function
     setTimeout(function () {
       node.classList.remove("active");
