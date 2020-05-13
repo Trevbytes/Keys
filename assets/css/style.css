@@ -10,7 +10,7 @@ body {
 }
 
 .page-title {
-      font-family: "Leckerli One";
+  font-family: "Leckerli One";
 }
 .header {
   border-bottom: 2px solid black;
@@ -35,7 +35,9 @@ body {
   justify-content: center;
 }
 
-.key {
+.key3,
+.key4,
+.key5 {
   height: calc(var(--width) * 4);
   width: var(--width);
 }
@@ -97,21 +99,21 @@ body {
   }
 }
 /*--------------End of Piano CSS code heavily influenced by a YouTube tutorial by Kyle.  https://www.youtube.com/watch?v=vjco5yKZpU8 */
-  .make-larger-info {
-    position: fixed; 
-    display: none; 
-    width: 100%; 
-    height: 100%; 
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgb(78, 78, 78);
-    z-index: 4;
-    cursor: pointer; 
-    color: whitesmoke;
-    padding-top: 60%;
-  }
+.make-larger-info {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(78, 78, 78);
+  z-index: 4;
+  cursor: pointer;
+  color: whitesmoke;
+  padding-top: 60%;
+}
 
 @media screen and (max-width: 550px) {
   .page-content {
