@@ -12,7 +12,7 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
-    <!-- My CSS -->
+    <!-- My CSS stylesheet -->
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
     <title>Keys</title>
   </head>
@@ -30,12 +30,7 @@
       </div>
     </div>
     <div class="container page-content">
-      <div class="row flex-nowrap header">
-        <div class="col-2 my-auto mx-auto">
-          <i class="fas fa-music"></i>
-          <i class="fas fa-music"></i>
-          <i class="fas fa-music"></i>
-        </div>
+      <div class="row header">
         <div class="col page-title">
           <h1>Keys</h1>
         </div>
@@ -45,34 +40,74 @@
       </div>
       <div class="row">
         <div class="col piano-container">
-          <div class="col">
-            <span>Reset</span><span id="song">Song: Happy Birthday</span>
+          <div class="col" id="song-info">
+            <span
+              ><button type="button" class="btn btn-dark btn-sm">
+                Reset
+              </button></span
+            ><span id="song">
+              <!-- Split dropleft button -->
+              <div class="btn-group">
+                <div class="btn-group dropleft" role="group">
+                  <button
+                    type="button"
+                    class="btn btn-success dropdown-toggle dropdown-toggle-split btn-sm"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    <span class="sr-only">Toggle Dropleft</span>
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                    <button class="dropdown-item" type="button">
+                      <i class="fas fa-music"></i> Happy Birthday
+                      <i class="fas fa-music"></i>
+                    </button>
+                    <button class="dropdown-item" type="button">
+                      <i class="fas fa-music"></i> Itzy Bitzy Spider
+                      <i class="fas fa-music"></i>
+                    </button>
+                    <button class="dropdown-item" type="button">
+                      <i class="fas fa-music"></i> The Wheels on the Bus
+                      <i class="fas fa-music"></i>
+                    </button>
+                    <button class="dropdown-item" type="button">
+                      Free Play
+                    </button>
+                  </div>
+                </div>
+                <button type="button" class="btn btn-success btn-sm">
+                  <i class="fas fa-music"></i> Happy Birthday <i
+                    class="fas fa-music"
+                  ></i>
+                </button></div
+            ></span>
           </div>
           <div class="col piano">
-            <div class="key3 white" id= "3F"></div>
-            <div class="key3 black" id= "3F#"></div>
-            <div class="key3 white" id= "3G"></div>
-            <div class="key3 black" id= "3G#"></div>
-            <div class="key3 white" id= "3A"></div>
-            <div class="key3 black" id= "3A#"></div>
-            <div class="key3 white" id= "3B"></div>
-            <div class="key4 white" id= "4C"></div>
-            <div class="key4 black" id= "4C#"></div>
-            <div class="key4 white" id= "4D"></div>
-            <div class="key4 black" id= "4D#"></div>
-            <div class="key4 white" id= "4E"></div>
-            <div class="key4 white" id= "4F"></div>
-            <div class="key4 black" id= "4F#"></div>
-            <div class="key4 white" id= "4G"></div>
-            <div class="key4 black" id= "4G#"></div>
-            <div class="key4 white" id= "4A"></div>
-            <div class="key4 black" id= "4A#"></div>
-            <div class="key4 white" id= "4B"></div>
-            <div class="key5 white" id= "5C"></div>
-            <div class="key5 black" id= "5C#"></div>
-            <div class="key5 white" id= "5D"></div>
-            <div class="key5 black" id= "5D#"></div>
-            <div class="key5 white" id= "5E"></div>
+            <div class="key3 white" id="3F"></div>
+            <div class="key3 black" id="3F#"></div>
+            <div class="key3 white" id="3G"></div>
+            <div class="key3 black" id="3G#"></div>
+            <div class="key3 white" id="3A"></div>
+            <div class="key3 black" id="3A#"></div>
+            <div class="key3 white" id="3B"></div>
+            <div class="key4 white" id="4C"></div>
+            <div class="key4 black" id="4C#"></div>
+            <div class="key4 white" id="4D"></div>
+            <div class="key4 black" id="4D#"></div>
+            <div class="key4 white" id="4E"></div>
+            <div class="key4 white" id="4F"></div>
+            <div class="key4 black" id="4F#"></div>
+            <div class="key4 white" id="4G"></div>
+            <div class="key4 black" id="4G#"></div>
+            <div class="key4 white" id="4A"></div>
+            <div class="key4 black" id="4A#"></div>
+            <div class="key4 white" id="4B"></div>
+            <div class="key5 white" id="5C"></div>
+            <div class="key5 black" id="5C#"></div>
+            <div class="key5 white" id="5D"></div>
+            <div class="key5 black" id="5D#"></div>
+            <div class="key5 white" id="5E"></div>
           </div>
         </div>
       </div>

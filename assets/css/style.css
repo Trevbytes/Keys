@@ -19,6 +19,10 @@ body {
 #song {
   float: right;
 }
+#song-info {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
 /*--------------Piano CSS code heavily influenced by a YouTube tutorial by Kyle.  https://www.youtube.com/watch?v=vjco5yKZpU8 */
 *::before,
 *::after {
