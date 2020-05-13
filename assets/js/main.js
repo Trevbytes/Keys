@@ -87,3 +87,53 @@ for (var i = 0; i < keys5.length; i++) {
     }, 300);
   });
 }
+
+/*--Happy Birday song --*/
+
+var happyBirthdaySong = [
+  "4C",
+  "4C",
+  "4D",
+  "4C",
+  "4F",
+  "4E",
+
+  "4C",
+  "4C",
+  "4D",
+  "4C",
+  "4G",
+  "4F",
+
+  "4C",
+  "4C",
+  "5C",
+  "4A",
+  "4F",
+  "4E",
+  "4D",
+
+  "4A#",
+  "4A#",
+  "4A",
+  "4F",
+  "4G",
+  "4F",
+];
+
+function playHappyBirthday() {
+  let time = 0; //Time between notes reset
+  for (let i = 0; i < happyBirthdaySong.length; i++) {
+    //sso = Song String Octave
+    let sso = happyBirthdaySong[i].substr(0, 1);
+    //ssnote = Song String Note
+    let ssnote = happyBirthdaySong[i].substr(1, 3);
+    time = time + 600;//add time between notes
+    setTimeout(() => {
+      Synth.play(0, ssnote, sso, 2);
+    }, time);
+  }
+  time = 0;
+}
+
+playHappyBirthday();
