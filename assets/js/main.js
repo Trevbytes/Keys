@@ -136,4 +136,4 @@ function playHappyBirthday() {
   time = 0;
 }
 
-playHappyBirthday();
+// playHappyBirthday();
