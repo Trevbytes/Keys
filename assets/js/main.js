@@ -63,21 +63,6 @@ var happyBirthdaySong = [
   "4F",
 ];
 
-function playHappyBirthday() {
-  let time = 0; //Time between notes reset
-  for (let i = 0; i < happyBirthdaySong.length; i++) {
-    //sso = Song String Octave
-    let sso = happyBirthdaySong[i].substr(0, 1);
-    //ssnote = Song String Note
-    let ssnote = happyBirthdaySong[i].substr(1, 3);
-    time = time + 600; //add time between notes
-    setTimeout(() => {
-      Synth.play(0, ssnote, sso, 2);
-    }, time);
-  }
-  time = 0;
-}
-
 function playSong(song) {
   let time = 0; //Time between notes reset
   for (let i = 0; i < song.length; i++) {
@@ -93,4 +78,3 @@ function playSong(song) {
   time = 0;
 }
 
-playSong(happyBirthdaySong);
