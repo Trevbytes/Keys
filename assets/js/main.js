@@ -62,12 +62,12 @@ var happyBirthdaySong = [
   "4G",
   "4F",
 ];
-
+var theSong;
 function playSong(song) {
   let i = 0; //index
-  let inewsong = false; //checks for repeat
-  if (theSong == "") {
-    var theSong = setInterval(function () {
+  console.log(theSong);
+  if (theSong === undefined) {
+    theSong = setInterval(function () {
       if (i === song.length) {
         clearInterval(theSong);
       } else {
@@ -75,17 +75,13 @@ function playSong(song) {
         let sso = song[i].substr(0, 1);
         //ssnote = Song String Note
         let ssnote = song[i].substr(1, 3);
-
         Synth.play(0, ssnote, sso, 2);
         i++;
-        console.log(song.length);
-        console.log(i);
-        console.log(theSong);
       }
     }, 600);
   } else {
     clearInterval(theSong);
-    var theSong = setInterval(function () {
+    theSong = setInterval(function () {
       if (i === song.length) {
         clearInterval(theSong);
       } else {
@@ -96,8 +92,6 @@ function playSong(song) {
 
         Synth.play(0, ssnote, sso, 2);
         i++;
-        console.log(song.length);
-        console.log(i);
       }
     }, 600);
   }
@@ -106,18 +100,3 @@ function playSong(song) {
 function reset() {
   clearInterval(theSong);
 }
-
-// function playSong(song) {
-//   let time = 0; //Time between notes reset
-//   for (let i = 0; i < song.length; i++) {
-//     //sso = Song String Octave
-//     let sso = song[i].substr(0, 1);
-//     //ssnote = Song String Note
-//     let ssnote = song[i].substr(1, 3);
-//     time = time + 600; //add time between notes
-//     setTimeout(() => {
-//       Synth.play(0, ssnote, sso, 2);
-//     }, time);
-//   }
-//   time = 0;
-// }
