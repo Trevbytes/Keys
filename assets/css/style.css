@@ -39,9 +39,7 @@ body {
   justify-content: center;
 }
 
-.key3,
-.key4,
-.key5 {
+.key {
   height: calc(var(--width) * 4);
   width: var(--width);
 }
