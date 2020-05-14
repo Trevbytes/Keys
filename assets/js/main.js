@@ -5,7 +5,7 @@ const keys5 = document.querySelectorAll(".key5");
 
 keys3.forEach((key3) => {
   key3.addEventListener("mousedown", () =>
-    Synth.play(0, key3.id.substr(1, 3), 3, 2)
+    Synth.play(0, key3.id.substr(1, 3), key3.id.substr(0, 1), 2)
   );
 });
 
@@ -22,7 +22,7 @@ keys5.forEach((key5) => {
 });
 
 /*--Adding and removing active class to piano keys. Help from Leesa Ward. https://gist.github.com/doubleedesign/08f89ad1c4f0ba73ffdbc727136da190 --*/
-for (var i = 0; i < keys3.length; i++) {
+for (let i = 0; i < keys3.length; i++) {
   // Add 'open' class on mouseover
   keys3[i].addEventListener("mousedown", function () {
     this.classList.add("active");
@@ -30,21 +30,21 @@ for (var i = 0; i < keys3.length; i++) {
 
   // Remove 'open" class with a delay
   keys3[i].addEventListener("mouseup", function () {
-    var node = this; // Allows us to access 'this' within the timeout function
+    let node = this; // Allows us to access 'this' within the timeout function
     setTimeout(function () {
       node.classList.remove("active");
     }, 300);
   });
 
   keys3[i].addEventListener("mouseout", function () {
-    var node = this; // Allows us to access 'this' within the timeout function
+    let node = this; // Allows us to access 'this' within the timeout function
     setTimeout(function () {
       node.classList.remove("active");
     }, 300);
   });
 }
 
-for (var i = 0; i < keys4.length; i++) {
+for (let i = 0; i < keys4.length; i++) {
   // Add 'open' class on mouseover
   keys4[i].addEventListener("mousedown", function () {
     this.classList.add("active");
@@ -52,21 +52,21 @@ for (var i = 0; i < keys4.length; i++) {
 
   // Remove 'open" class with a delay
   keys4[i].addEventListener("mouseup", function () {
-    var node = this; // Allows us to access 'this' within the timeout function
+    let node = this; // Allows us to access 'this' within the timeout function
     setTimeout(function () {
       node.classList.remove("active");
     }, 300);
   });
 
   keys4[i].addEventListener("mouseout", function () {
-    var node = this; // Allows us to access 'this' within the timeout function
+    let node = this; // Allows us to access 'this' within the timeout function
     setTimeout(function () {
       node.classList.remove("active");
     }, 300);
   });
 }
 
-for (var i = 0; i < keys5.length; i++) {
+for (let i = 0; i < keys5.length; i++) {
   // Add 'open' class on mouseover
   keys5[i].addEventListener("mousedown", function () {
     this.classList.add("active");
@@ -74,14 +74,14 @@ for (var i = 0; i < keys5.length; i++) {
 
   // Remove 'open" class with a delay
   keys5[i].addEventListener("mouseup", function () {
-    var node = this; // Allows us to access 'this' within the timeout function
+    let node = this; // Allows us to access 'this' within the timeout function
     setTimeout(function () {
       node.classList.remove("active");
     }, 300);
   });
 
   keys5[i].addEventListener("mouseout", function () {
-    var node = this; // Allows us to access 'this' within the timeout function
+    let node = this; // Allows us to access 'this' within the timeout function
     setTimeout(function () {
       node.classList.remove("active");
     }, 300);
@@ -128,7 +128,7 @@ function playHappyBirthday() {
     let sso = happyBirthdaySong[i].substr(0, 1);
     //ssnote = Song String Note
     let ssnote = happyBirthdaySong[i].substr(1, 3);
-    time = time + 600;//add time between notes
+    time = time + 600; //add time between notes
     setTimeout(() => {
       Synth.play(0, ssnote, sso, 2);
     }, time);
