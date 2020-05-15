@@ -54,6 +54,10 @@ body {
   background-color: #ccc;
 }
 
+.white.active-comp{
+    background-color: red;
+}
+
 .black {
   --width: 27px;
   background-color: black;
@@ -65,6 +69,10 @@ body {
 
 .black.active {
   background-color: #333;
+}
+
+.black.active-comp{
+    background-color: red;
 }
 
 @media screen and (min-width: 1000px) {

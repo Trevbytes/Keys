@@ -60,8 +60,21 @@
         <div class="col piano-container">
           <div class="col" id="song-info">
             <span
-              ><button type="button" onclick="reset()" class="btn btn-dark btn-sm">
-                Reset
+              ><button
+                type="button"
+                onclick="reset()"
+                class="btn btn-dark btn-sm"
+              >
+                Stop
+              </button></span
+            >
+            <span
+              ><button
+                type="button"
+                onclick="teach(happyBirthdaySong)"
+                class="btn btn-dark btn-sm"
+              >
+                Teach
               </button></span
             ><span id="song">
               <!-- Split dropleft button -->
@@ -94,7 +107,11 @@
                     </button>
                   </div>
                 </div>
-                <button type="button" onclick="playSong(happyBirthdaySong)" class="btn btn-success btn-sm">
+                <button
+                  type="button"
+                  onclick="playSong(happyBirthdaySong)"
+                  class="btn btn-success btn-sm"
+                >
                   <i class="fas fa-music"></i> Happy Birthday
                   <i class="fas fa-music"></i>
                 </button></div
