@@ -118,14 +118,13 @@ function reset() {
 }
 
 function teach(song) {
-  let gamelengthindex = 0;
-  while (gamelengthindex < song.length) {
-    let i = 0; //index
-    let sso = song[i].substr(0, 1);
+  let gameLengthIndex = 0;
+  while (gameLengthIndex < song.length) {    
+    let sso = song[gameLengthIndex].substr(0, 1);
     //ssnote = Song String Note
-    let ssnote = song[i].substr(1, 2);
+    let ssnote = song[gameLengthIndex].substr(1, 2);
     Synth.play(0, ssnote, sso, 2);
-    let songID = document.getElementById(song[i]);
+    let songID = document.getElementById(song[gameLengthIndex]);
     songID.classList.add("active-comp");
     setTimeout(function () {
       $(songID).removeClass("active-comp");
@@ -148,5 +147,7 @@ function teach(song) {
       }, 500);
       console.log(event.target);
     });
+
+    gameLengthIndex++;
   }
 }
