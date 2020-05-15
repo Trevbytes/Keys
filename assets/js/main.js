@@ -68,6 +68,7 @@ var happyBirthdaySong = [
 var theSong;
 function playSong(song) {
   let i = 0; //index
+  //if a song not playing
   if (theSong === undefined) {
     theSong = setInterval(function () {
       if (i === song.length) {
@@ -88,6 +89,7 @@ function playSong(song) {
         i++;
       }
     }, 600);
+    //if a song is playing
   } else {
     clearInterval(theSong);
     theSong = setInterval(function () {
@@ -113,41 +115,82 @@ function playSong(song) {
   }
 }
 
-function reset() {
-  clearInterval(theSong);
-}
-
 function teach(song) {
   let gameLengthIndex = 0;
-  while (gameLengthIndex < song.length) {    
-    let sso = song[gameLengthIndex].substr(0, 1);
-    //ssnote = Song String Note
-    let ssnote = song[gameLengthIndex].substr(1, 2);
-    Synth.play(0, ssnote, sso, 2);
-    let songID = document.getElementById(song[gameLengthIndex]);
-    songID.classList.add("active-comp");
+  let playerInput = [];
+
+  Synth.play(
+    0,
+    song[gameLengthIndex].substr(1, 2),
+    song[gameLengthIndex].substr(0, 1),
+    2
+  );
+
+  let noteID = document.getElementById(song[gameLengthIndex]);
+  noteID.classList.add("active-comp");
+  setTimeout(function () {
+    noteID.classList.remove("active-comp");
+  }, 500);
+
+  $(".key").click(function (event) {
+    console.log(event.target.id);
+    playerInput.push(event.target.id);
+    // Log the clicked element in the console
+    Synth.play(
+      0,
+      event.target.id.substr(1, 2),
+      event.target.id.substr(0, 1),
+      2
+    );
+
+    event.target.id = document.getElementById(song[gameLengthIndex]);
+    event.target.classList.add("active");
     setTimeout(function () {
-      $(songID).removeClass("active-comp");
+      event.target.classList.remove("active");
     }, 500);
 
-    $(songID).click(function (event) {
-      // Don't follow the link
-      event.preventDefault();
+    var teachSong = setInterval(function () {
+      if (playerInput.length === song.length) {
+        clearInterval(teachSong);
+      }
+      if (playerInput[gameLengthIndex] === song[gameLengthIndex]) {
+        if (playerInput.length !== song.length) {
+          gameLengthIndex++;
+          Synth.play(
+            0,
+            song[gameLengthIndex].substr(1, 2),
+            song[gameLengthIndex].substr(0, 1),
+            2
+          );
 
-      // Log the clicked element in the console
-      i++;
-      let sso = song[i].substr(0, 1);
-      //ssnote = Song String Note
-      let ssnote = song[i].substr(1, 2);
-      Synth.play(0, ssnote, sso, 2);
-      let songID = document.getElementById(song[i]);
-      songID.classList.add("active-comp");
-      setTimeout(function () {
-        $(songID).removeClass("active-comp");
-      }, 500);
-      console.log(event.target);
-    });
+          noteID = document.getElementById(song[gameLengthIndex]);
+          noteID.classList.add("active-comp");
+          setTimeout(function () {
+            noteID.classList.remove("active-comp");
+          }, 500);
+        } else {
+          clearInterval(teachSong);
+        }
+      } else {
+        playerInput[gameLengthIndex] = undefined;
+        Synth.play(
+          0,
+          song[gameLengthIndex].substr(1, 2),
+          song[gameLengthIndex].substr(0, 1),
+          2
+        );
 
-    gameLengthIndex++;
-  }
+        noteID = document.getElementById(song[gameLengthIndex]);
+        noteID.classList.add("active-comp");
+        setTimeout(function () {
+          noteID.classList.remove("active-comp");
+        }, 500);
+      }
+    }, 2000);
+  });
+}
+
+function reset() {
+  clearInterval(theSong);
+  clearInterval(teachSong);  
 }
