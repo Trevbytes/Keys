@@ -114,11 +114,13 @@ function playSong(song) {
     }, 600);
   }
 }
-
+var teachSong;
+var teachOn;
+var gameLengthIndex;
 function teach(song) {
-  let gameLengthIndex = 0;
+  gameLengthIndex = 0;
   let playerInput = [];
-  let teachOn = true;
+  teachOn = true;
 
   Synth.play(
     0,
@@ -134,25 +136,32 @@ function teach(song) {
   }, 500);
 
   $(".t").click(function (event) {
+    console.log();
+
+    // Log the clicked element in the console
+    Synth.play(
+      0,
+      event.target.id.substr(1, 2),
+      event.target.id.substr(0, 1),
+      2
+    );
     if (teachOn === true) {
-      console.log(event.target.id);
       playerInput.push(event.target.id);
-      // Log the clicked element in the console
-      Synth.play(
-        0,
-        event.target.id.substr(1, 2),
-        event.target.id.substr(0, 1),
-        2
-      );
 
       noteID = document.getElementById(song[gameLengthIndex]);
       noteID.classList.add("active");
       setTimeout(function () {
         event.target.classList.remove("active");
       }, 500);
-      console.log("finished first key");
+    }
 
-      var teachSong = setInterval(function () {
+    console.log("finished first key");
+    console.log(playerInput);
+    console.log(teachOn);
+    console.log(teachSong);
+    if (teachSong === undefined && teachOn) {
+      console.log(teachSong);
+      teachSong = setInterval(function () {
         if (playerInput.length === song.length) {
           clearInterval(teach);
           console.log("input=song length");
@@ -174,8 +183,11 @@ function teach(song) {
               noteID.classList.remove("active-comp");
             }, 500);
           } else {
+            teachOn = false;
+            playerInput = [];           
             clearInterval(teachSong);
-            teachOn=false;
+            teachSong=undefined;
+            console.log(playerInput);
             console.log("clear interval player input = song.length");
           }
         } else if (playerInput[gameLengthIndex] === undefined) {
@@ -209,17 +221,16 @@ function teach(song) {
             noteID.classList.remove("active-comp");
           }, 500);
         }
-      }, 1000);
-    }else{return;}
+      }, 1500);
+    }
   });
 }
 
 function reset() {
   clearInterval(theSong);
   clearInterval(teachSong);
-  removeClick();
-}
-
-function removeClick() {
-  $(".t").removeEventListener("click");
+  teachSong=undefined;
+  playerInput=[];
+  gameLengthIndex = 0;
+  teachOn=false;
 }
