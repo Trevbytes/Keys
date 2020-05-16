@@ -72,7 +72,7 @@
               ><button
                 type="button"
                 onclick="teach(happyBirthdaySong)"
-                class="btn btn-dark btn-sm float-right"
+                class="btn btn-dark btn-sm float-right active-teach"
               >
                 Teach Me
               </button></span
@@ -90,19 +90,35 @@
                     <span class="sr-only">Toggle Dropleft</span>
                   </button>
                   <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                    <button class="dropdown-item" type="button">
+                    <button
+                      class="dropdown-item"
+                      type="button"
+                      onclick="changeActiveSong('Happy Birthday','happyBirthdaySong')"
+                    >
                       <i class="fas fa-music"></i> Happy Birthday
                       <i class="fas fa-music"></i>
                     </button>
-                    <button class="dropdown-item" type="button">
+                    <button
+                      class="dropdown-item"
+                      type="button"
+                      onclick="changeActiveSong('Itzy Bitzy Spider','itzyBitzySpiderSong')"
+                    >
                       <i class="fas fa-music"></i> Itzy Bitzy Spider
                       <i class="fas fa-music"></i>
                     </button>
-                    <button class="dropdown-item" type="button">
+                    <button
+                      class="dropdown-item"
+                      type="button"
+                      onclick="changeActiveSong('The Wheels on the Bus','theWheelsOnTheBusSong')"
+                    >
                       <i class="fas fa-music"></i> The Wheels on the Bus
                       <i class="fas fa-music"></i>
                     </button>
-                    <button class="dropdown-item" type="button">
+                    <button
+                      class="dropdown-item"
+                      type="button"
+                      onclick="changeActiveSong('Free Play','freePlay')"
+                    >
                       Free Play
                     </button>
                   </div>
@@ -110,7 +126,7 @@
                 <button
                   type="button"
                   onclick="playSong(happyBirthdaySong)"
-                  class="btn btn-success btn-sm"
+                  class="btn btn-success btn-sm active-song"
                 >
                   <i class="fas fa-music"></i> Happy Birthday
                   <i class="fas fa-music"></i>

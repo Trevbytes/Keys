@@ -111,20 +111,21 @@ function teach(song) {
   teachOn = true;
   lastPlayedKey = undefined;
 
-//   Synth.play(
-//     0,
-//     song[gameLengthIndex].substr(1, 2),
-//     song[gameLengthIndex].substr(0, 1),
-//     2
-//   );
-
-  let noteID = document.getElementById(song[gameLengthIndex]);
-  noteID.classList.add("active-comp");
-  setTimeout(function () {
-    noteID.classList.remove("active-comp");
-  }, 500);
+  //   Synth.play(
+  //     0,
+  //     song[gameLengthIndex].substr(1, 2),
+  //     song[gameLengthIndex].substr(0, 1),
+  //     2
+  //   );
 
   if (teachSong === undefined && teachOn) {
+      
+    let noteID = document.getElementById(song[gameLengthIndex]);
+    noteID.classList.add("active-comp");
+    setTimeout(function () {
+      noteID.classList.remove("active-comp");
+    }, 500);
+
     teachSong = setInterval(function () {
       playerInput.push(lastPlayedKey);
       if (playerInput.length === song.length) {
@@ -133,12 +134,12 @@ function teach(song) {
       if (playerInput[gameLengthIndex] === song[gameLengthIndex]) {
         if (playerInput.length !== song.length) {
           gameLengthIndex++;
-        //   Synth.play(
-        //     0,
-        //     song[gameLengthIndex].substr(1, 2),
-        //     song[gameLengthIndex].substr(0, 1),
-        //     2
-        //   );
+          //   Synth.play(
+          //     0,
+          //     song[gameLengthIndex].substr(1, 2),
+          //     song[gameLengthIndex].substr(0, 1),
+          //     2
+          //   );
           noteID = document.getElementById(song[gameLengthIndex]);
           noteID.classList.add("active-comp");
           setTimeout(function () {
@@ -189,3 +190,22 @@ function reset() {
   teachOn = false;
   playerInput = [];
 }
+
+function changeActiveSong(name, song) {
+  console.log(song);
+  if (name === "Free Play") {
+    $(".active-song").html(` ${name} `);
+    $(".active-song").attr("onclick", `playSong(${song})`);
+    $(".active-teach").attr("onclick", `teach(${song})`);
+  } else {
+    $(".active-song").html(
+      `<i class="fas fa-music"></i> ${name} <i class="fas fa-music"></i>`
+    );
+    $(".active-song").attr("onclick", `playSong(${song})`);
+    $(".active-teach").attr("onclick", `teach(${song})`);
+  }
+}
+
+var itzyBitzySpiderSong = [];
+var theWheelsOnTheBusSong = [];
+var freePlay = [];
