@@ -105,17 +105,18 @@ var teachOn;
 var gameLengthIndex;
 var playerInput;
 function teach(song) {
+  reset();
   gameLengthIndex = 0;
   playerInput = [];
   teachOn = true;
   lastPlayedKey = undefined;
 
-  Synth.play(
-    0,
-    song[gameLengthIndex].substr(1, 2),
-    song[gameLengthIndex].substr(0, 1),
-    2
-  );
+//   Synth.play(
+//     0,
+//     song[gameLengthIndex].substr(1, 2),
+//     song[gameLengthIndex].substr(0, 1),
+//     2
+//   );
 
   let noteID = document.getElementById(song[gameLengthIndex]);
   noteID.classList.add("active-comp");
@@ -132,12 +133,12 @@ function teach(song) {
       if (playerInput[gameLengthIndex] === song[gameLengthIndex]) {
         if (playerInput.length !== song.length) {
           gameLengthIndex++;
-          Synth.play(
-            0,
-            song[gameLengthIndex].substr(1, 2),
-            song[gameLengthIndex].substr(0, 1),
-            2
-          );
+        //   Synth.play(
+        //     0,
+        //     song[gameLengthIndex].substr(1, 2),
+        //     song[gameLengthIndex].substr(0, 1),
+        //     2
+        //   );
           noteID = document.getElementById(song[gameLengthIndex]);
           noteID.classList.add("active-comp");
           setTimeout(function () {
@@ -150,12 +151,12 @@ function teach(song) {
           teachSong = undefined;
         }
       } else if (playerInput[gameLengthIndex] === undefined) {
-        Synth.play(
-          0,
-          song[gameLengthIndex].substr(1, 2),
-          song[gameLengthIndex].substr(0, 1),
-          2
-        );
+        // Synth.play(
+        //   0,
+        //   song[gameLengthIndex].substr(1, 2),
+        //   song[gameLengthIndex].substr(0, 1),
+        //   2
+        // );
         noteID = document.getElementById(song[gameLengthIndex]);
         noteID.classList.add("active-comp");
         setTimeout(function () {
@@ -163,12 +164,12 @@ function teach(song) {
         }, 500);
       } else {
         playerInput.pop();
-        Synth.play(
-          0,
-          song[gameLengthIndex].substr(1, 2),
-          song[gameLengthIndex].substr(0, 1),
-          2
-        );
+        // Synth.play(
+        //   0,
+        //   song[gameLengthIndex].substr(1, 2),
+        //   song[gameLengthIndex].substr(0, 1),
+        //   2
+        // );
         noteID = document.getElementById(song[gameLengthIndex]);
         noteID.classList.add("active-comp");
         setTimeout(function () {
