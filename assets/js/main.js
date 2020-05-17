@@ -292,7 +292,7 @@ function changeActiveSong(name, song) {
     $(".active-teach").attr("onclick", `teach(${song})`);
   } else {
     $(".active-song").html(
-      `<i class="fas fa-music"></i> ${name} <i class="fas fa-music"></i>`
+      `<i class="fas fa-play text-dark">  </i><i class="fas fa-music"></i> ${name} <i class="fas fa-music"></i>`
     );
     $(".active-song").attr("onclick", `playSong(${song})`);
     $(".active-teach").attr("onclick", `teach(${song})`);
