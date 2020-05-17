@@ -24,6 +24,10 @@ body {
   color: white;
 }
 
+.navbar-brand{
+    padding-top: 0;
+    padding-bottom: 0;
+}
 .about-info{
     color: white;
     text-align: right;
