@@ -59,6 +59,100 @@ var happyBirthdaySong = [
   "4G",
   "4F",
 ];
+
+var itzyBitzySpiderSong = [
+  "3G",
+  "4C",
+  "4C",
+  "4C",
+  "4D",
+  "4E",
+  "4E",
+
+  "4E",
+  "4D",
+  "4C",
+  "4D",
+  "4E",
+  "4C",
+
+  "4E",
+  "4E",
+  "4F",
+  "4G",
+  "4G",
+
+  "4F",
+  "4E",
+  "4F",
+  "4G",
+  "4E",
+
+  "4C",
+  "4C",
+  "4D",
+  "4E",
+  "4E",
+
+  "4D",
+  "4C",
+  "4D",
+  "4E",
+  "4C",
+
+  "3G",
+  "3G",
+  "4C",
+  "4C",
+  "4C",
+
+  "4D",
+  "4E",
+  "4E",
+
+  "4E",
+  "4D",
+  "4C",
+  "4D",
+  "4E",
+  "4C",
+];
+
+var theWheelsOnTheBusSong = [
+  "4D",
+  "4G",
+  "4G",
+  "4G",
+  "4G",
+  "4B",
+  "5D",
+  "4B",
+  "4G",
+
+  "4A",
+  "4F#",
+  "4D",
+  "5D",
+  "4B",
+  "4G",
+
+  "4D",
+  "4G",
+  "4G",
+  "4G",
+  "4G",
+  "4B",
+  "5D",
+  "4B",
+  "4G",
+
+  "4A",
+  "4D",
+  "4D",
+  "4G",
+];
+var freePlay = [];
+
 var theSong;
 function playSong(song) {
   let i = 0; //index
@@ -119,7 +213,6 @@ function teach(song) {
   //   );
 
   if (teachSong === undefined && teachOn) {
-      
     let noteID = document.getElementById(song[gameLengthIndex]);
     noteID.classList.add("active-comp");
     setTimeout(function () {
@@ -205,7 +298,3 @@ function changeActiveSong(name, song) {
     $(".active-teach").attr("onclick", `teach(${song})`);
   }
 }
-
-var itzyBitzySpiderSong = [];
-var theWheelsOnTheBusSong = [];
-var freePlay = [];
