@@ -16,8 +16,8 @@ body {
   border-bottom: 2px solid black;
 }
 
-.settings{
-    text-align: right;   
+.settings {
+  text-align: right;
 }
 
 .footer-row {
@@ -67,6 +67,22 @@ body {
 .key {
   height: calc(var(--width) * 4);
   width: var(--width);
+}
+
+.notetext {
+  position: absolute;
+  bottom: 0;
+ padding-left: 40%;
+ padding-bottom: 1rem;
+}
+
+.notetext-b {
+position: absolute;
+  bottom: 0;
+ padding-left: 30%;
+ padding-bottom: 0.5rem;
+ font-size: 10px;
+ color: whitesmoke;
 }
 
 .white {

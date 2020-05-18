@@ -263,3 +263,15 @@ function switchInstrument(instrumentnum) {
       noteLength=2;
   }
 }
+
+notesOff();
+
+function notesOn(){
+$(".notetext").show()
+$(".notetext-b").show()
+}
+
+function notesOff(){
+$(".notetext").hide()
+$(".notetext-b").hide()
+}
