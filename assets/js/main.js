@@ -155,7 +155,7 @@ function addComputerTeachActive(keyID) {
 }
 
 function playSong(song) {
-  reset();
+  stopAll();
   enableStop();
   let i = 0; //index
   //if a song not playing
@@ -187,7 +187,7 @@ function playSong(song) {
 }
 
 function teach(song) {
-  reset();
+  stopAll();
   enableStop();
   teachOn = true;
   lastPlayedKey = undefined;
@@ -204,7 +204,7 @@ function teach(song) {
           keyID = document.getElementById(song[gameLengthIndex]);
           addComputerTeachActive(keyID);
         } else {
-          reset();
+          stopAll();
         }
       } else {
         playerInput.pop();
@@ -215,7 +215,7 @@ function teach(song) {
   }
 }
 
-function reset() {
+function stopAll() {
   clearInterval(playingSong);
   clearInterval(teachSong);
   teachSong = undefined;
@@ -227,7 +227,7 @@ function reset() {
 }
 
 function changeActiveSong(name, song) {
-  reset();
+  stopAll();
   if (name === "Free Play") {
     $(".active-song").html(` ${name} `);
     $(".active-song").attr("onclick", `playSong(${song})`);
