@@ -16,6 +16,10 @@ body {
   border-bottom: 2px solid black;
 }
 
+.settings{
+    text-align: right;   
+}
+
 .footer-row {
   border: 2px solid black;
   /* border-right: 2px solid black;
