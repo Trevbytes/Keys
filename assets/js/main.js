@@ -140,6 +140,20 @@ for (let i = 0; i < keys.length; i++) {
   });
 }
 
+function addComputerActive(keyID) {
+  keyID.classList.add("active-comp");
+  setTimeout(function () {
+    $(keyID).removeClass("active-comp");
+  }, 300);
+}
+
+function addComputerTeachActive(keyID) {
+  keyID.classList.add("active-comp");
+  setTimeout(function () {
+    $(keyID).removeClass("active-comp");
+  }, 500);
+}
+
 function playSong(song) {
   reset();
   enableStop();
@@ -151,13 +165,8 @@ function playSong(song) {
         clearInterval(playingSong);
       } else {
         Synth.play(0, song[i].substr(1, 2), song[i].substr(0, 1), 2);
-
-        let songID = document.getElementById(song[i]);
-        songID.classList.add("active-comp");
-        setTimeout(function () {
-          $(songID).removeClass("active-comp");
-        }, 300);
-
+        let keyID = document.getElementById(song[i]);
+        addComputerActive(keyID);
         i++;
       }
     }, 600);
@@ -169,13 +178,8 @@ function playSong(song) {
         clearInterval(playingSong);
       } else {
         Synth.play(0, song[i].substr(1, 2), song[i].substr(0, 1), 2);
-
-        let songID = document.getElementById(song[i]);
-        songID.classList.add("active-comp");
-        setTimeout(function () {
-          $(songID).removeClass("active-comp");
-        }, 300);
-
+        let keyID = document.getElementById(song[i]);
+        addComputerActive(keyID);
         i++;
       }
     }, 600);
@@ -189,33 +193,23 @@ function teach(song) {
   lastPlayedKey = undefined;
 
   if (teachSong === undefined && teachOn) {
-    let noteID = document.getElementById(song[gameLengthIndex]);
-    noteID.classList.add("active-comp");
-    setTimeout(function () {
-      noteID.classList.remove("active-comp");
-    }, 500);
+    let keyID = document.getElementById(song[gameLengthIndex]);
+    addComputerTeachActive(keyID);
 
     teachSong = setInterval(function () {
       playerInput.push(lastPlayedKey);
       if (playerInput[gameLengthIndex] === song[gameLengthIndex]) {
         if (playerInput.length !== song.length) {
           gameLengthIndex++;
-          noteID = document.getElementById(song[gameLengthIndex]);
-          noteID.classList.add("active-comp");
-          setTimeout(function () {
-            noteID.classList.remove("active-comp");
-          }, 500);
+          keyID = document.getElementById(song[gameLengthIndex]);
+          addComputerTeachActive(keyID);
         } else {
           reset();
         }
       } else {
         playerInput.pop();
-
-        noteID = document.getElementById(song[gameLengthIndex]);
-        noteID.classList.add("active-comp");
-        setTimeout(function () {
-          noteID.classList.remove("active-comp");
-        }, 500);
+        keyID = document.getElementById(song[gameLengthIndex]);
+        addComputerTeachActive(keyID);
       }
     }, 1500);
   }
@@ -233,6 +227,7 @@ function reset() {
 }
 
 function changeActiveSong(name, song) {
+  reset();
   if (name === "Free Play") {
     $(".active-song").html(` ${name} `);
     $(".active-song").attr("onclick", `playSong(${song})`);
