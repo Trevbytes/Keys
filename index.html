@@ -86,7 +86,7 @@
         </div>
       </div>
     </header>
-        <div
+    <div
       class="modal fade"
       id="settingsModal"
       tabindex="-1"
@@ -97,7 +97,30 @@
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-body">
-            The audio in Keys is made by math!
+            Instruments:
+            <div class="btn-group" role="group" aria-label="Instruments">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                onclick="switchInstrument(0)"
+              >
+                Piano
+              </button>
+              <button
+                type="button"
+                class="btn btn-secondary"
+                onclick="switchInstrument(1)"
+              >
+                Organ
+              </button>
+              <button
+                type="button"
+                class="btn btn-secondary"
+                onclick="switchInstrument(2)"
+              >
+                Acoustic Guitar
+              </button>
+            </div>
           </div>
           <div class="modal-footer">
             <button
@@ -119,7 +142,7 @@
               ><button
                 type="button"
                 onclick="stopAll()"
-                class="btn btn-danger btn-sm "
+                class="btn btn-danger btn-sm"
                 disabled
                 aria-disabled="true"
                 tabindex="-1"

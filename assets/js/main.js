@@ -5,6 +5,8 @@ var teachSong;
 var teachOn;
 var gameLengthIndex = 0;
 var playerInput;
+var instrument = 0;
+var noteLength = 2;
 /*-- Songs --*/
 const happyBirthdaySong = [
     "4C",
@@ -120,7 +122,7 @@ for (let i = 0; i < keys.length; i++) {
   // Add 'active' class on mouseover
   keys[i].addEventListener("mousedown", function () {
     this.classList.add("active");
-    Synth.play(0, keys[i].id.substr(1, 2), keys[i].id.substr(0, 1), 2);
+    Synth.play(instrument, keys[i].id.substr(1, 2), keys[i].id.substr(0, 1), noteLength);
     lastPlayedKey = this.id;
   });
 
@@ -162,9 +164,9 @@ function playSong(song) {
   if (playingSong === undefined) {
     playingSong = setInterval(function () {
       if (i === song.length) {
-        clearInterval(playingSong);
+        stopAll();
       } else {
-        Synth.play(0, song[i].substr(1, 2), song[i].substr(0, 1), 2);
+        Synth.play(instrument, song[i].substr(1, 2), song[i].substr(0, 1), noteLength);
         let keyID = document.getElementById(song[i]);
         addComputerActive(keyID);
         i++;
@@ -175,9 +177,9 @@ function playSong(song) {
     clearInterval(playingSong);
     playingSong = setInterval(function () {
       if (i === song.length) {
-        clearInterval(playingSong);
+        stopAll();
       } else {
-        Synth.play(0, song[i].substr(1, 2), song[i].substr(0, 1), 2);
+        Synth.play(instrument, song[i].substr(1, 2), song[i].substr(0, 1), noteLength);
         let keyID = document.getElementById(song[i]);
         addComputerActive(keyID);
         i++;
@@ -251,4 +253,13 @@ function disableStop() {
   $("#stop-button").attr("disabled", true);
   $("#stop-button").attr("aria-disabled", "true");
   $("#stop-button").attr("tabindex", "-1");
+}
+
+function switchInstrument(instrumentnum) {
+  instrument = instrumentnum;
+  if(instrumentnum===1){
+      noteLength=1;
+  }else{
+      noteLength=2;
+  }
 }
