@@ -3,14 +3,14 @@
 
 body {
   background-color: #ebc246;
-  font-family: "Open Sans";
+  font-family: "Open Sans", sans-serif;
 }
 .piano-container {
   padding: 0;
 }
 
 .page-title {
-  font-family: "Leckerli One";
+  font-family: "Leckerli One", cursive;
 }
 .header {
   border-bottom: 2px solid black;
@@ -46,6 +46,7 @@ body {
   padding-top: 5px;
   padding-bottom: 5px;
 }
+
 /*--------------Piano CSS code heavily influenced by a YouTube tutorial by Kyle.  https://www.youtube.com/watch?v=vjco5yKZpU8 */
 *::before,
 *::after {
