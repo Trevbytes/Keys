@@ -1,5 +1,4 @@
 const keys = document.querySelectorAll(".key");
-const recordButton = document.querySelectorAll("#record-btn");
 var lastPlayedKey;
 var playingSong;
 var teachSong;
@@ -9,7 +8,6 @@ var playerInput;
 var instrument = 0;
 var noteLength = 2;
 var recordInput = [];
-var recordingStartTime;
 
 /*-- Songs --*/
 const happyBirthdaySong = [
