@@ -178,12 +178,13 @@
                 Teach Me
               </button></span
             ><span id="song">
+            <button type="button" class="btn btn-secondary btn-sm" id="record-btn" onclick="record()">Record</button>
               <!-- Split dropleft button -->
               <div class="btn-group">
                 <div class="btn-group dropleft" role="group">
                   <button
                     type="button"
-                    class="btn btn-success dropdown-toggle dropdown-toggle-split btn-sm"
+                    class="btn btn-success dropdown-toggle dropdown-toggle-split btn-sm song-choice"
                     data-toggle="dropdown"
                     aria-haspopup="true"
                     aria-expanded="false"
@@ -218,16 +219,16 @@
                     <button
                       class="dropdown-item"
                       type="button"
-                      onclick="changeActiveSong('Free Play','freePlay')"
+                      onclick="changeActiveSong('Play Recording','playRecording')"
                     >
-                      Free Play
-                    </button>
+                      Record Your Own!
+                    </button>                   
                   </div>
                 </div>
                 <button
                   type="button"
                   onclick="playSong(happyBirthdaySong)"
-                  class="btn btn-success btn-sm active-song mr-1 hvr-icon-pulse-grow"
+                  class="btn btn-success btn-sm active-song mr-1 hvr-icon-pulse-grow song-choice"
                 >
                   <i class="fas fa-play text-dark"></i>
                   <i class="fas fa-music hvr-icon"></i> Happy Birthday
@@ -380,20 +381,11 @@
       src="https://kit.fontawesome.com/e0af4595f7.js"
       crossorigin="anonymous"
     ></script>
-    <!-- Load Jasmine Framework -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.7.0/jasmine.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.7.0/jasmine-html.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.7.0/boot.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.7.0/jasmine.css"
-    /> -->
+
     <!--Script for audio created by Keith Horwood, Github user keithwhor. https://github.com/keithwhor/audiosynth -->
     <script type="text/javascript" src="./assets/js/audiosynth.js"></script>
     <!--My Script-->
     <script type="text/javascript" src="./assets/js/main.js"></script>
-    <!--Jasmine Tests-->
-    <script type="text/javascript" src="./assets/spec/keysSpec.js"></script>
     <!--/Scripts-->
   </body>
 </html>

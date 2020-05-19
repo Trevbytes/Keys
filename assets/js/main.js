@@ -1,4 +1,5 @@
 const keys = document.querySelectorAll(".key");
+const recordButton = document.querySelectorAll("#record-btn");
 var lastPlayedKey;
 var playingSong;
 var teachSong;
@@ -7,6 +8,9 @@ var gameLengthIndex = 0;
 var playerInput;
 var instrument = 0;
 var noteLength = 2;
+var recordInput = [];
+var recordingStartTime;
+
 /*-- Songs --*/
 const happyBirthdaySong = [
     "4C",
@@ -113,8 +117,8 @@ const happyBirthdaySong = [
     "4D",
     "4D",
     "4G",
-  ],
-  freePlay = [];
+  ];
+var playRecording = [];
 
 /*--------------Piano js code  */
 /*--Adding event lister for mouse down as well as adding and removing active class to piano keys.  --*/
@@ -122,7 +126,13 @@ for (let i = 0; i < keys.length; i++) {
   // Add 'active' class on mouseover
   keys[i].addEventListener("mousedown", function () {
     this.classList.add("active");
-    Synth.play(instrument, keys[i].id.substr(1, 2), keys[i].id.substr(0, 1), noteLength);
+    if (recording()) recordNote(keys[i].id);
+    Synth.play(
+      instrument,
+      keys[i].id.substr(1, 2),
+      keys[i].id.substr(0, 1),
+      noteLength
+    );
     lastPlayedKey = this.id;
   });
 
@@ -166,7 +176,12 @@ function playSong(song) {
       if (i === song.length) {
         stopAll();
       } else {
-        Synth.play(instrument, song[i].substr(1, 2), song[i].substr(0, 1), noteLength);
+        Synth.play(
+          instrument,
+          song[i].substr(1, 2),
+          song[i].substr(0, 1),
+          noteLength
+        );
         let keyID = document.getElementById(song[i]);
         addComputerActive(keyID);
         i++;
@@ -179,7 +194,12 @@ function playSong(song) {
       if (i === song.length) {
         stopAll();
       } else {
-        Synth.play(instrument, song[i].substr(1, 2), song[i].substr(0, 1), noteLength);
+        Synth.play(
+          instrument,
+          song[i].substr(1, 2),
+          song[i].substr(0, 1),
+          noteLength
+        );
         let keyID = document.getElementById(song[i]);
         addComputerActive(keyID);
         i++;
@@ -224,22 +244,29 @@ function stopAll() {
   playerInput = [];
   gameLengthIndex = 0;
   teachOn = false;
-  playerInput = [];
   disableStop();
 }
 
 function changeActiveSong(name, song) {
   stopAll();
-  if (name === "Free Play") {
-    $(".active-song").html(` ${name} `);
+  
+  
+  if (name === "Play Recording") {
+    if (!(song.length>0)){disableTeach(); console.log(recordInput[0])}; 
+    $(".active-song").html(
+      `<i class="fas fa-play text-dark">  </i><i class="fas fa-music hvr-icon"></i> ${name} <i class="fas fa-music hvr-icon"></i>`
+    );
     $(".active-song").attr("onclick", `playSong(${song})`);
     $(".active-teach").attr("onclick", `teach(${song})`);
+    showRecord();
+    
   } else {
     $(".active-song").html(
       `<i class="fas fa-play text-dark">  </i><i class="fas fa-music hvr-icon"></i> ${name} <i class="fas fa-music hvr-icon"></i>`
     );
     $(".active-song").attr("onclick", `playSong(${song})`);
     $(".active-teach").attr("onclick", `teach(${song})`);
+    hideRecord();
   }
 }
 
@@ -255,23 +282,89 @@ function disableStop() {
   $("#stop-button").attr("tabindex", "-1");
 }
 
+function disableTeach() {
+  $(".active-teach").attr("disabled", true);
+  $(".active-teach").attr("aria-disabled", "true");
+  $(".active-teach").attr("tabindex", "-1");
+}
+
+function enableTeach() {
+  $(".active-teach").attr("disabled", false);
+  $(".active-teach").attr("aria-disabled", "false");
+  $(".active-teach").attr("tabindex", "1");
+}
+
+function disableSongChoice() {
+  $(".song-choice").attr("disabled", true);
+  $(".song-choice").attr("aria-disabled", "true");
+  $(".song-choice").attr("tabindex", "-1");
+}
+
+function enableSongChoice() {
+  $(".song-choice").attr("disabled", false);
+  $(".song-choice").attr("aria-disabled", "false");
+  $(".song-choice").attr("tabindex", "1");
+}
+
+
 function switchInstrument(instrumentnum) {
   instrument = instrumentnum;
-  if(instrumentnum===1){
-      noteLength=1;
-  }else{
-      noteLength=2;
+  if (instrumentnum === 1) {
+    noteLength = 1;
+  } else {
+    noteLength = 2;
   }
 }
 
 notesOff();
 
-function notesOn(){
-$(".notetext").show()
-$(".notetext-b").show()
+function notesOn() {
+  $(".notetext").show();
+  $(".notetext-b").show();
 }
 
-function notesOff(){
-$(".notetext").hide()
-$(".notetext-b").hide()
+function notesOff() {
+  $(".notetext").hide();
+  $(".notetext-b").hide();
+}
+hideRecord();
+function showRecord() {
+  $("#record-btn").show();
+  $("#record-btn").show();
+}
+
+function hideRecord() {
+  $("#record-btn").hide();
+  $("#record-btn").hide();
+}
+
+function record() {
+  if (recording()) {
+    $("#record-btn").removeClass("btn-danger active active-r").addClass("btn-secondary");
+    stopRecording();
+    enableTeach();
+    enableSongChoice();
+  } else {
+    $("#record-btn").removeClass("btn-secondary").addClass(" active-r active btn-danger");
+    startRecording();
+    disableTeach();
+    disableSongChoice();
+  }
+}
+
+function recording() {
+  return $("#record-btn").hasClass("active-r");
+}
+
+function startRecording() {
+  recordInput = [];
+  playRecording = [];
+}
+
+function stopRecording() {
+  console.log(playRecording);
+}
+
+function recordNote(keyID) {
+  playRecording.push(keyID);
 }
