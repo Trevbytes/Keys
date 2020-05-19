@@ -252,12 +252,13 @@ function changeActiveSong(name, song) {
   
   
   if (name === "Play Recording") {
-    if (!(song.length>0)){disableTeach(); console.log(recordInput[0])}; 
+    
     $(".active-song").html(
       `<i class="fas fa-play text-dark">  </i><i class="fas fa-music hvr-icon"></i> ${name} <i class="fas fa-music hvr-icon"></i>`
     );
     $(".active-song").attr("onclick", `playSong(${song})`);
     $(".active-teach").attr("onclick", `teach(${song})`);
+    if (playRecording[0]===undefined){disableTeach(); disableActiveSong()}; 
     showRecord();
     
   } else {
@@ -306,6 +307,18 @@ function enableSongChoice() {
   $(".song-choice").attr("tabindex", "1");
 }
 
+function disableActiveSong() {
+  $(".active-song").attr("disabled", true);
+  $(".active-song").attr("aria-disabled", "true");
+  $(".active-song").attr("tabindex", "-1");
+}
+
+function enableActiveSong() {
+  $(".active-song").attr("disabled", false);
+  $(".active-song").attr("aria-disabled", "false");
+  $(".active-song").attr("tabindex", "1");
+}
+
 
 function switchInstrument(instrumentnum) {
   instrument = instrumentnum;
@@ -344,6 +357,7 @@ function record() {
     stopRecording();
     enableTeach();
     enableSongChoice();
+    enableActiveSong();
   } else {
     $("#record-btn").removeClass("btn-secondary").addClass(" active-r active btn-danger");
     startRecording();
@@ -362,7 +376,7 @@ function startRecording() {
 }
 
 function stopRecording() {
-  console.log(playRecording);
+  console.log(playRecording.length);
 }
 
 function recordNote(keyID) {
