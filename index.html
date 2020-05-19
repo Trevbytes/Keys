@@ -54,15 +54,12 @@
       </div>
     </div>
     <div
-      class="make-larger-info-tablet container-fluid d-none d-md-block d-lg-none bg-dark text-white"
+      class="alert alert-dark alert-dismissible make-larger-info-tablet d-none d-md-block d-lg-none"
     >
-      <div class="row">
-        <div class="col text-center">
-          <p>
-            Rotate your device or expand your window for a better experience.
-          </p>
-        </div>
-      </div>
+      <a href="#" class="close" data-dismiss="alert" aria-label="close"
+        >&times;</a
+      >
+      Rotate your device or expand your window for a better experience.
     </div>
     <header>
       <div class="container page-content">
@@ -125,18 +122,10 @@
             <br />
             Display Notes:
             <div class="btn-group" role="group" aria-label="Display Notes">
-              <button
-                type="button"
-                class="btn btn-info"
-                onclick="notesOn()"
-              >
+              <button type="button" class="btn btn-info" onclick="notesOn()">
                 On
               </button>
-              <button
-                type="button"
-                class="btn btn-info"
-                onclick="notesOff(1)"
-              >
+              <button type="button" class="btn btn-info" onclick="notesOff(1)">
                 Off
               </button>
             </div>
@@ -178,7 +167,14 @@
                 Teach Me
               </button></span
             ><span id="song">
-            <button type="button" class="btn btn-secondary btn-sm" id="record-btn" onclick="record()">Record</button>
+              <button
+                type="button"
+                class="btn btn-secondary btn-sm"
+                id="record-btn"
+                onclick="record()"
+              >
+                Record
+              </button>
               <!-- Split dropleft button -->
               <div class="btn-group">
                 <div class="btn-group dropleft" role="group">
@@ -222,7 +218,7 @@
                       onclick="changeActiveSong('Play Recording','playRecording')"
                     >
                       Record Your Own!
-                    </button>                   
+                    </button>
                   </div>
                 </div>
                 <button
@@ -314,7 +310,7 @@
       </div>
     </div>
     <footer>
-      <div class="container footer-row fixed-bottom ">
+      <div class="container footer-row fixed-bottom">
         <div class="row">
           <div class="col my-auto navbar-brand">
             <img src="./assets/images/favicon-32x32.png" alt="Keys Favicon" />

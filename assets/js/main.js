@@ -352,6 +352,11 @@ function hideRecord() {
   $("#record-btn").hide();
 }
 
+function hideInfoTablet() {
+  $(".make-larger-info-tablet").addClass("collapse");
+  console.log("dismissed");
+}
+
 function record() {
   if (recording()) {
     $("#record-btn").removeClass("btn-danger active active-r").addClass("btn-secondary");
