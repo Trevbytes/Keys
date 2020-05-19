@@ -388,3 +388,15 @@ function stopRecording() {
 function recordNote(keyID) {
   playRecording.push(keyID);
 }
+
+function footerFix(x) {
+  if (x.matches) { // If media query matches
+    $(".footer-row").removeClass("fixed-bottom").addClass("absolute-bottom");
+  } else {
+    $(".footer-row").removeClass("absoulte-bottom").addClass("fixed-bottom");
+  }
+}
+
+var windowHeight = window.matchMedia("(max-height: 308px)")
+footerFix(windowHeight) // Call listener function at run time
+windowHeight.addListener(footerFix) // Attach listener function on state changes
