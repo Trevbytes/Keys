@@ -150,6 +150,9 @@ for (let i = 0; i < keys.length; i++) {
   });
 }
 
+$(".notetext").addClass("no-select");
+$(".notetext-b").addClass("no-select");
+
 function addComputerActive(keyID) {
   keyID.classList.add("active-comp");
   setTimeout(function () {
