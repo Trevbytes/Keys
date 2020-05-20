@@ -7,6 +7,7 @@ The purpose of the milestone project is to present an interactive website built 
 Keys is a single webpage with an interactive keyboard built with Javascript with multiple features.
 
 [Live Link to Site](https://trevbytes.github.io/Keys/)
+
 ## UX
 
 This site was initially designed to teach the user simple tunes on the piano. The user user would choose a song and the piano would play a note that the user would then play, this would repeat until the full song is played.
@@ -49,34 +50,58 @@ All songs chosen in this project are in the Public Domain to avoid any issues wi
 ## Technologies Used
 
 - [HTML 5](https://en.wikipedia.org/wiki/HTML5)
+
   - The project uses **HTML 5** to construct the website.
 
 - [CSS 3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+
   - The project uses **CSS 3** to style the HTML elements.
 
 - [Javascript](https://en.wikipedia.org/wiki/JavaScript)
+
   - The project uses **Javascipt** as the main source of interactivity in the website. It manipulates both the HTML and CSS elements of the site.
 
 - [Bootstrap 4.4.1](https://getbootstrap.com/)
+
   - The project uses **Bootstrap** to create the layout of the site as well as style many elements such buttons.
 
 - [JQuery](https://jquery.com)
+
   - The project uses **JQuery** to simplify DOM manipulation in my main javascript file.
 
 - [Hover.css](https://ianlunn.github.io/Hover/)
+
   - The project uses **Hover.css** to create hover effects on buttons and keys.
 
 - [Google Fonts](https://fonts.google.com/)
+
   - The project uses **Google Fonts** for fonts used in the website.
 
 - [Font Awesome](https://fontawesome.com/icons?d=gallery)
+
   - The project uses **Font Awesome** for all icons in the website.
 
 - [Favicon.io](https://favicon.io/)
+
   - The project uses **Favicon.io** to create favicon icons for the website.
 
 - [Balsamiq Wireframes](https://balsamiq.com/)
+
   - The project used **Balsamiq Wireframs** to create the inital wireframes.
+
+- [Git](https://git-scm.com/)
+
+  - The project uses **Git** for tracking changes in code during development.
+
+- [GitPod](https://www.gitpod.io/)
+
+  - The project used **GitPod** as the online IDE/workspace during development .
+
+- [GitHub](https://github)
+  - The project uses **GitHub** for hosting the webpage.
+
+- [Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools)
+  - The project used **Chrome Developer Tools** for debugging the webpage during development.
 
 ## Testing
 
@@ -100,15 +125,11 @@ If this section grows too long, you may want to split it off into a separate fil
 
 ## Deployment
 
-This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub Pages or Heroku).
+This project is hosted on GitHub Pages with only [one deployed version](https://trevbytes.github.io/Keys/).
 
-In particular, you should provide all details of the differences between the deployed version and the development version, if any, including:
+The GitHub Repository can be found [here](https://github.com/Trevbytes/Keys).
 
-- Different values for environment variables (Heroku Config Vars)?
-- Different configuration files?
-- Separate git branch?
-
-In addition, if it is not obvious, you should also describe how to run your code locally.
+For infomation on how to clone or download the repository click [here](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository).
 
 ## Credits
 
