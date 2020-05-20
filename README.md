@@ -1,41 +1,82 @@
 # Keys
 
+![Image](./assets/images/am-i-responsive.jpg)
 Keys is my second milestone project while studying at [The Code Institute](https://codeinstitute.net/).
 The purpose of the milestone project is to present an interactive website built with HTML, CSS and Javascript.
 
 Keys is a single webpage with an interactive keyboard built with Javascript with multiple features.
- 
+
+[Live Link to Site](https://trevbytes.github.io/Keys/)
 ## UX
- 
-Use this section to provide insight into your UX process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
 
-In particular, as part of this section we recommend that you provide a list of User Stories, with the following general structure:
-- As a user type, I want to perform an action, so that I can achieve a goal.
+This site was initially designed to teach the user simple tunes on the piano. The user user would choose a song and the piano would play a note that the user would then play, this would repeat until the full song is played.
 
-This section is also where you would share links to any wireframes, mockups, diagrams etc. that you created as part of the design process. These files should themselves either be included as a pdf file in the project itself (in an separate directory), or just hosted elsewhere online and can be in any format that is viewable inside the browser.
+The site is designed for mobile phones in landscape view. Keeping the layout of the site simple was crucial as to not confuse the user or overwhelm the user with options. When the keyboard is not useable a prompt lets the use know what they can do to have a better user experience.
+
+With the recording feature added this site has evolved to also cater to users wanting to teach a song to another user.
+
+The sites [wireframes](https://github.com/Trevbytes/Keys/blob/master/keys-wireframe.pdf) show the origanal idea for the site. Design changes were made durning the consturction of the site to keep the site clean and free from extensive text.
+
+Bright colors were chosen to engage the user and highlight buttons.
+
+All songs chosen in this project are in the Public Domain to avoid any issues with copywrites.
+
+### User Stories
+
+- A user wants to learn how to play simple tunes on the piano.
+- A user wants to teach a friend a simple tune on the piano.
+- A music teacher wants to help a student learn.
+- A user wants to pass time by playing a simple piano.
+- A user is going to a Birthday party where there will be a piano. The user wants to impress people by playing Happy Birthday on the piano. The user can learn and practice the notes before hand on this website.
+- A user is singing to a child and wants music to accompany. The user can play the songs from this website while singing or even have the child play/learn the song.
 
 ## Features
 
-In this section, you should go over the different parts of your project, and describe each in a sentence or so.
- 
 ### Existing Features
-- Feature 1 - allows users X to achieve Y, by having them fill out Z
-- ...
 
-For some/all of your features, you may choose to reference the specific project files that implement them, although this is entirely optional.
-
-In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
+- **Play Tune** - allows users to listen to the chosen tune, by having them click on the button with the tune name.
+- **Teach Me** - allows users to learn a tune, note by note. After the user clicks 'Teach Me' the first note of the tune is shown. If the last key pressed is the same as the note displayed the next note is shown. If not, the note being taught is repeated.
+- **Record** - allows users to create their own tune. This tune can also use the 'Teach Me' feature after the tune is recorded.
+- **Settings** - A modal that allows users to choose between 3 instuments for the piano sounds as well as the option to show the names of the keys of the piano.
+- **About** - A modal to provide info about the sound of the piano and give credit to Keith Horwood (The creator of the audio sounds) and a link to my GitHub.
 
 ### Features Left to Implement
-- Another feature idea
+
+- Add more inputs the the piano. Types of inpute including: keyboard input, multi-touch input, ability to "drag" a finger or mouse over keys to play the notes (like a physical piano).
+- Add a pause note in the songs. Currently songs are played back at set intervals with no rests or pauses between notes.
+- Add a message when the browser is not supported and include links to download modern browsers.
 
 ## Technologies Used
 
-In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to construct this project. For each, provide its name, a link to its official site and a short sentence of why it was used.
+- [HTML 5](https://en.wikipedia.org/wiki/HTML5)
+  - The project uses **HTML 5** to construct the website.
+
+- [CSS 3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+  - The project uses **CSS 3** to style the HTML elements.
+
+- [Javascript](https://en.wikipedia.org/wiki/JavaScript)
+  - The project uses **Javascipt** as the main source of interactivity in the website. It manipulates both the HTML and CSS elements of the site.
+
+- [Bootstrap 4.4.1](https://getbootstrap.com/)
+  - The project uses **Bootstrap** to create the layout of the site as well as style many elements such buttons.
 
 - [JQuery](https://jquery.com)
-    - The project uses **JQuery** to simplify DOM manipulation.
+  - The project uses **JQuery** to simplify DOM manipulation in my main javascript file.
 
+- [Hover.css](https://ianlunn.github.io/Hover/)
+  - The project uses **Hover.css** to create hover effects on buttons and keys.
+
+- [Google Fonts](https://fonts.google.com/)
+  - The project uses **Google Fonts** for fonts used in the website.
+
+- [Font Awesome](https://fontawesome.com/icons?d=gallery)
+  - The project uses **Font Awesome** for all icons in the website.
+
+- [Favicon.io](https://favicon.io/)
+  - The project uses **Favicon.io** to create favicon icons for the website.
+
+- [Balsamiq Wireframes](https://balsamiq.com/)
+  - The project used **Balsamiq Wireframs** to create the inital wireframes.
 
 ## Testing
 
@@ -46,10 +87,10 @@ Whenever it is feasible, prefer to automate your tests, and if you've done so, p
 For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly useful form for describing your testing process is via scenarios, such as:
 
 1. Contact form:
-    1. Go to the "Contact Us" page
-    2. Try to submit the empty form and verify that an error message about the required fields appears
-    3. Try to submit the form with an invalid email address and verify that a relevant error message appears
-    4. Try to submit the form with all inputs valid and verify that a success message appears.
+   1. Go to the "Contact Us" page
+   2. Try to submit the empty form and verify that an error message about the required fields appears
+   3. Try to submit the form with an invalid email address and verify that a relevant error message appears
+   4. Try to submit the form with all inputs valid and verify that a success message appears.
 
 In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
 
@@ -62,19 +103,21 @@ If this section grows too long, you may want to split it off into a separate fil
 This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub Pages or Heroku).
 
 In particular, you should provide all details of the differences between the deployed version and the development version, if any, including:
+
 - Different values for environment variables (Heroku Config Vars)?
 - Different configuration files?
 - Separate git branch?
 
 In addition, if it is not obvious, you should also describe how to run your code locally.
 
-
 ## Credits
 
 ### Content
+
 - The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
 
 ### Media
+
 - The photos used in this site were obtained from ...
 
 ### Acknowledgements
