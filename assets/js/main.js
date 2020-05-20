@@ -122,7 +122,8 @@ let playRecording = [];
 /*-- /Song Arrays --*/
 /*------------------------------- Runtime Events -------------------------------------*/
 /*------------- Event Listeners -----------------*/
-/*--Adding event lister for mouse down as well as adding and removing active class to piano keys.  --*/
+
+/*--Adding event listeners for mouse down as well as adding and removing active class to piano keys.  --*/
 for (let i = 0; i < keys.length; i++) {
   // Add 'active' class on mousedown and play sound.
   keys[i].addEventListener("mousedown", function () {
@@ -164,6 +165,8 @@ notesOff();
 hideRecord();
 /*-- /Runtime Events --*/
 /*------------------------------- Button Functions -------------------------------------*/
+
+//Clears all intervals and relevent variables of all functions and disables the stop button.
 function stopAll() {
   clearInterval(playingSong);
   clearInterval(teachSong);
@@ -174,37 +177,43 @@ function stopAll() {
   disableStop();
 }
 
+//This function changes the active song by editing the html attributes with the variables passed to the function.
 function changeActiveSong(name, song) {
-  stopAll();
+  stopAll(); //stops any currently playing songs or teach functions.
 
   if (name === "Play Recording") {
+    // Catches the "Play Recording" song
     $(".active-song").html(
       `<i class="fas fa-play text-dark">  </i><i class="fas fa-music hvr-icon"></i> ${name} <i class="fas fa-music hvr-icon"></i>`
     );
     $(".active-song").attr("onclick", `playSong(${song})`);
     $(".active-teach").attr("onclick", `teach(${song})`);
     if (playRecording[0] === undefined) {
+      //if there is no song recorded this disables buttons to guide the user to the record button.
       disableTeach();
       disableActiveSong();
     }
-    showRecord();
+    showRecord(); //shows the record button
   } else {
     $(".active-song").html(
       `<i class="fas fa-play text-dark">  </i><i class="fas fa-music hvr-icon"></i> ${name} <i class="fas fa-music hvr-icon"></i>`
     );
     $(".active-song").attr("onclick", `playSong(${song})`);
     $(".active-teach").attr("onclick", `teach(${song})`);
-    hideRecord();
+    hideRecord(); //hides record button on preset songs
   }
 }
 
+//This function is used to play back song arrays note by note
 function playSong(song) {
   stopAll();
   enableStop();
-  let i = 0; //index
-  //if a song not playing
+  let i = 0; //index variable
+
+  //if a song is not playing
   if (playingSong === undefined) {
     playingSong = setInterval(function () {
+      //checks if the song is finished
       if (i === song.length) {
         stopAll();
       } else {
@@ -214,6 +223,7 @@ function playSong(song) {
           song[i].substr(0, 1),
           noteLength
         );
+        //adds active class to played key, with a timeout.
         let keyID = document.getElementById(song[i]);
         addComputerActive(keyID);
         i++;
@@ -221,7 +231,7 @@ function playSong(song) {
     }, 600);
     //if a song is playing
   } else {
-    clearInterval(playingSong);
+    clearInterval(playingSong); //clears the interval in the above if statement
     playingSong = setInterval(function () {
       if (i === song.length) {
         stopAll();
@@ -232,6 +242,7 @@ function playSong(song) {
           song[i].substr(0, 1),
           noteLength
         );
+        //adds active class to played key, with a timeout.
         let keyID = document.getElementById(song[i]);
         addComputerActive(keyID);
         i++;
@@ -240,28 +251,40 @@ function playSong(song) {
   }
 }
 
+/*This function adds an active class to the first note in a song array.
+If the users last key is the same as the shown key, the next note in
+the array is shown. The next note is only shown when the correct key is pressed.
+Otherwise the note is repeated. All player input is passed to an array. Only the
+last stored item in the array is checked*/
 function teach(song) {
   stopAll();
   enableStop();
-  teachOn = true;
-  lastPlayedKey = undefined;
+  teachOn = true;//allows the teach function to work
+  lastPlayedKey = undefined;//clears the lastPlayedKey.
 
-  if (teachSong === undefined && teachOn) {
+  if (teachOn) {
+      //shows first note
     let keyID = document.getElementById(song[teachLengthIndex]);
     addComputerTeachActive(keyID);
 
     teachSong = setInterval(function () {
       playerInput.push(lastPlayedKey);
+      //if the input matches the current note in the song
       if (playerInput[teachLengthIndex] === song[teachLengthIndex]) {
+          //if there is another note in the song
         if (playerInput.length !== song.length) {
           teachLengthIndex++;
+          //shows next note
           keyID = document.getElementById(song[teachLengthIndex]);
           addComputerTeachActive(keyID);
+          //end of song
         } else {
           stopAll();
         }
+        //the input does not match the current note
       } else {
-        playerInput.pop();
+        playerInput.pop();//removes the wrong note in the playerInput array
+        //repeats the current note
         keyID = document.getElementById(song[teachLengthIndex]);
         addComputerTeachActive(keyID);
       }
@@ -269,6 +292,11 @@ function teach(song) {
   }
 }
 
+/*----------------Recording functions----------------------- */
+
+/*This function is called every time a key is clicked. If the recording
+button has been activated the function runs the code. Otherwise nothing is
+done. The function then checks if the recording button has been clicked.*/
 function record() {
   if (recording()) {
     $("#record-btn")
@@ -287,18 +315,22 @@ function record() {
   }
 }
 
+//Checks that the record button has been clicked 
 function recording() {
   return $("#record-btn").hasClass("active-r");
 }
 
+//Called to clear playRecording array and recordInput array
 function startRecording() {
   recordInput = [];
   playRecording = [];
 }
 
+//function that pushes user input to recording array
 function recordNote(keyID) {
   playRecording.push(keyID);
 }
+/*--/Recording Functions-- */
 
 function switchInstrument(instrumentnum) {
   instrument = instrumentnum;
