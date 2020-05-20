@@ -1,6 +1,7 @@
 # Keys
 
 ![Image](./assets/images/am-i-responsive.jpg)
+
 Keys is my second milestone project while studying at [The Code Institute](https://codeinstitute.net/).
 The purpose of the milestone project is to present an interactive website built with HTML, CSS and Javascript.
 
@@ -10,7 +11,7 @@ Keys is a single webpage with an interactive keyboard built with Javascript with
 
 ## UX
 
-This site was initially designed to teach the user simple tunes on the piano. The user user would choose a song and the piano would play a note that the user would then play, this would repeat until the full song is played.
+This site was initially designed to teach the user simple tunes on the piano. The user would choose a song and the piano would play a note that the user would then play, this would repeat until the full song is played.
 
 The site is designed for mobile phones in landscape view. Keeping the layout of the site simple was crucial as to not confuse the user or overwhelm the user with options. When the keyboard is not useable a prompt lets the use know what they can do to have a better user experience.
 
@@ -85,6 +86,10 @@ All songs chosen in this project are in the Public Domain to avoid any issues wi
 
   - The project uses **Favicon.io** to create favicon icons for the website.
 
+- [CSS Gradient](https://cssgradient.io/)
+
+  - The project used **CSS Gradient** to create gradient colors for active keys.
+
 - [Balsamiq Wireframes](https://balsamiq.com/)
 
   - The project used **Balsamiq Wireframs** to create the inital wireframes.
@@ -98,30 +103,55 @@ All songs chosen in this project are in the Public Domain to avoid any issues wi
   - The project used **GitPod** as the online IDE/workspace during development .
 
 - [GitHub](https://github)
+
   - The project uses **GitHub** for hosting the webpage.
 
 - [Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools)
+
   - The project used **Chrome Developer Tools** for debugging the webpage during development.
+
+- [W3C Markup Validation Service](https://validator.w3.org)
+  - The project used **W3C Markup Validation** for validating code during development.
 
 ## Testing
 
-In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your user stories from the UX section and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
+This project has been texted extensively for display responsiveness. I have tested the site in all display sizes in Chrome Dev Tools, Chrome, Firefox, Opera, Edge and Android devices.
 
-Whenever it is feasible, prefer to automate your tests, and if you've done so, provide a brief explanation of your approach, link to the test file(s) and explain how to run them.
+All users can achieve their goals for coming to this website.
 
-For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly useful form for describing your testing process is via scenarios, such as:
+All modern browsers are supported. Older browsers such as IE are not suppported, currently there is no alert when using an older browser.
 
-1. Contact form:
-   1. Go to the "Contact Us" page
-   2. Try to submit the empty form and verify that an error message about the required fields appears
-   3. Try to submit the form with an invalid email address and verify that a relevant error message appears
-   4. Try to submit the form with all inputs valid and verify that a success message appears.
+The testing and debugging of this project was doing extensively in Chrome Dev Tools. The process would typically go as follows:
 
-In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
+- Create a function.
+- Test that function and try to break the function using unexpected input and having friends and family test the function.
+- Fixed the bugs. During this project I learned how useful 'console.log' can be when trying to figure out why a function is not working as intended.
+- Create next function.
+- Repeat.
 
-You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
+A testing framework such as [Jasmine](https://jasmine.github.io/) was not used as manual user testing was more appropriate for the interactivity required in this project.
 
-If this section grows too long, you may want to split it off into a separate file and link to it from here.
+All bugs found during testing have been fixed. An interesting bug I can accross was when a user would click on 'Teach Me' and then a note would repeat even when a user clicked on a key. I fixed this bug and learned an important lesson in user experience. A new user that knows nothing of the website is learning how the site works. When the user clicked on 'Teach Me', the first note would be displayed. The first time the note was displayed the user typically did not click on the key. If a user already knew they needed to click on the key, they would click on it before it would repeat. If no input was given before the note repeated, the function would get stuck in a loop and not allow any user input. I learned about user intuition and learning during testing of this site.
+
+Another interesting unintended feature was left in the site. When in the 'Teach Me' function a user can click as many keys as they want as long as the **last key** they played was correct. This was left and not fixed as this allows users to add flare to their song, such as an extra note in Happy Birthday if the receiver of the Happy Birthday song has a long name.
+
+This project has been peer reviewed/tested from Code Institute's Slack channel.
+
+This project have been reviewed/tested by a senior web developer. A mentor provided by Code Institute during my studies.
+
+This project have been reviewed/tested by friends and family.This project has been texted extensively for interactivity.
+
+All users can achieve their goals for coming to this website.
+
+Some of the main testing of features included:
+
+- Cycle through songs and play each. Check that correct songs are played and taught.
+- Cycle through instument choices and ajust note length so that the audio sounds right on all instruments.
+- Checked that the text for notes were properly displayed on all screen sizes.
+- Checked that the recording feature was intuitive. Buttons are disabled if they do nothing and enabled when usable.
+- Checked that a recorded song is saved until recorded over(or website is refreshed), even when changing songs or pressing 'stop'.
+
+- The HTML CSS code has been validated by [W3C Markup Validation Service](https://validator.w3.org). **There are CSS errors due to the validator being outdated. Errors return on CSS variables and vendor extensions**
 
 ## Deployment
 
@@ -133,14 +163,12 @@ For infomation on how to clone or download the repository click [here](https://h
 
 ## Credits
 
-### Content
-
-- The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
-
 ### Media
 
-- The photos used in this site were obtained from ...
+- The audiosynth.js file used in this project was created by Keith William Horwood. He has created an audio synthesizer using math in javascript. All sounds created in this project use this code. More info about his file can be found [here](https://keithwhor.com/music/). His GitHub can be found [here](https://github.com/keithwhor/audiosynth).
 
 ### Acknowledgements
 
-- I received inspiration for this project from X
+- I received inspiration/help for the [piano](https://www.youtube.com/watch?v=vjco5yKZpU8) and [recording function](https://www.youtube.com/watch?v=d0-VH4MC0Rk) in this project from YouTube tutorials by Kyle.
+- Help for the initial code of adding and removing an 'active' class to piano keys is credited to a [gist](https://gist.github.com/doubleedesign/08f89ad1c4f0ba73ffdbc727136da190) by Lessa Ward.
+- When stuck with coding issues, I used the following sites to help understand/solve the issues: [W3schools](https://www.w3schools.com/),[StackOverflow](https://stackoverflow.com/),[MDN](https://developer.mozilla.org/en-US/)
