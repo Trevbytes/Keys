@@ -145,7 +145,7 @@ Some of the main testing of features included:
 - Checked that the recording feature was intuitive. Buttons are disabled if they do nothing and enabled when usable.
 - Checked that a recorded song is saved until recorded over(or website is refreshed), even when changing songs or pressing 'stop'.
 
-- The HTML and CSS code has been validated by [W3C Markup Validation Service](https://validator.w3.org). **There are CSS errors due to the validator being outdated. Errors return on CSS variables and vendor extensions.**
+- The HTML and CSS code has been validated by [W3C Markup Validation Service](https://validator.w3.org).
 
 ## Deployment
 

@@ -21,10 +21,7 @@ body {
 }
 
 .footer-row {
-  border: 2px solid black;
-  /* border-right: 2px solid black;
-  border-left: 2px solid black; */
-
+  border: 2px;
   background-color: black;
   color: white;
 }
@@ -47,7 +44,7 @@ body {
   padding-bottom: 5px;
 }
 
-/*--------------Piano CSS code heavily influenced by a YouTube tutorial by Kyle.  https://www.youtube.com/watch?v=vjco5yKZpU8 */
+/*--------------Piano CSS code influenced by a YouTube tutorial by Kyle.  https://www.youtube.com/watch?v=vjco5yKZpU8 */
 *::before,
 *::after {
   box-sizing: border-box;
@@ -93,7 +90,6 @@ body {
 }
 
 .white.active {
-  /* background-color: #ccc; */
   background-image: linear-gradient(to left, #bdbbbe 0%, #9d9ea3 100%),
     radial-gradient(
       88% 271%,
@@ -110,7 +106,6 @@ body {
 }
 
 .white.active-comp {
-  /* background-color: red; */
   background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
 }
 
@@ -124,7 +119,6 @@ body {
 }
 
 .black.active {
-  /* background-color: #333; */
   background: linear-gradient(
       to bottom,
       rgba(255, 255, 255, 0.15) 0%,
@@ -140,7 +134,6 @@ body {
 }
 
 .black.active-comp {
-  /* background-color: red; */
   background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
 }
 
@@ -177,7 +170,7 @@ body {
     z-index: 2;
   }
 }
-/*--------------End of Piano CSS code heavily influenced by a YouTube tutorial by Kyle.  https://www.youtube.com/watch?v=vjco5yKZpU8 */
+/*--------------End of Piano CSS code influenced by a YouTube tutorial by Kyle.  https://www.youtube.com/watch?v=vjco5yKZpU8 */
 .make-larger-info {
   position: fixed;
   display: none;
