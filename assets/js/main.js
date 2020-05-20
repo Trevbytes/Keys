@@ -1,15 +1,17 @@
+/*------------- Variables -----------------*/
 const keys = document.querySelectorAll(".key");
-var lastPlayedKey;
-var playingSong;
-var teachSong;
-var teachOn;
-var gameLengthIndex = 0;
-var playerInput;
-var instrument = 0;
-var noteLength = 2;
-var recordInput = [];
-
-/*-- Songs --*/
+let lastPlayedKey,
+  playingSong,
+  teachSong,
+  teachOn,
+  teachLengthIndex = 0,
+  playerInput,
+  instrument = 0,
+  noteLength = 2,
+  recordInput = [],
+  windowHeight = window.matchMedia("(max-height: 308px)");
+/*-- /Variables --*/
+/*------------- Song Arrays -----------------*/
 const happyBirthdaySong = [
     "4C",
     "4C",
@@ -116,55 +118,84 @@ const happyBirthdaySong = [
     "4D",
     "4G",
   ];
-var playRecording = [];
-
-/*--------------Piano js code  */
+let playRecording = [];
+/*-- /Song Arrays --*/
+/*------------------------------- Runtime Events -------------------------------------*/
+/*------------- Event Listeners -----------------*/
 /*--Adding event lister for mouse down as well as adding and removing active class to piano keys.  --*/
 for (let i = 0; i < keys.length; i++) {
-  // Add 'active' class on mouseover
+  // Add 'active' class on mousedown and play sound.
   keys[i].addEventListener("mousedown", function () {
     this.classList.add("active");
+    //'if' pushes the note to an array if recording is on.
     if (recording()) recordNote(keys[i].id);
+    // 'Synth' is using the AudioSynth file by Keith William Horwood https://github.com/keithwhor/audiosynth.
+    // Synth.play takes 4 inputs; instrument, music note, octave, duration.
     Synth.play(
       instrument,
       keys[i].id.substr(1, 2),
       keys[i].id.substr(0, 1),
       noteLength
     );
-    lastPlayedKey = this.id;
+    lastPlayedKey = this.id; //lastPlayedKey is used in the teach function.
   });
 
   // Remove 'active' class with a delay after mouseup
   keys[i].addEventListener("mouseup", function () {
-    let node = this; // Allow access to 'this' in a timeout function
+    let node = this;
     setTimeout(function () {
       node.classList.remove("active");
     }, 300);
   });
   // Remove 'active' class with a delay after mouseout
   keys[i].addEventListener("mouseout", function () {
-    let node = this; // Allow access to 'this' in a timeout function
+    let node = this;
     setTimeout(function () {
       node.classList.remove("active");
     }, 300);
   });
 }
-
+windowHeight.addListener(footerFix); // Attaches listener function on state changes.
+/*-- /Event Listeners --*/
+footerFix(windowHeight);
 $(".notetext").addClass("no-select");
 $(".notetext-b").addClass("no-select");
-
-function addComputerActive(keyID) {
-  keyID.classList.add("active-comp");
-  setTimeout(function () {
-    $(keyID).removeClass("active-comp");
-  }, 300);
+notesOff();
+hideRecord();
+/*-- /Runtime Events --*/
+/*------------------------------- Button Functions -------------------------------------*/
+function stopAll() {
+  clearInterval(playingSong);
+  clearInterval(teachSong);
+  teachSong = undefined;
+  playerInput = [];
+  teachLengthIndex = 0;
+  teachOn = false;
+  disableStop();
 }
 
-function addComputerTeachActive(keyID) {
-  keyID.classList.add("active-comp");
-  setTimeout(function () {
-    $(keyID).removeClass("active-comp");
-  }, 500);
+function changeActiveSong(name, song) {
+  stopAll();
+
+  if (name === "Play Recording") {
+    $(".active-song").html(
+      `<i class="fas fa-play text-dark">  </i><i class="fas fa-music hvr-icon"></i> ${name} <i class="fas fa-music hvr-icon"></i>`
+    );
+    $(".active-song").attr("onclick", `playSong(${song})`);
+    $(".active-teach").attr("onclick", `teach(${song})`);
+    if (playRecording[0] === undefined) {
+      disableTeach();
+      disableActiveSong();
+    }
+    showRecord();
+  } else {
+    $(".active-song").html(
+      `<i class="fas fa-play text-dark">  </i><i class="fas fa-music hvr-icon"></i> ${name} <i class="fas fa-music hvr-icon"></i>`
+    );
+    $(".active-song").attr("onclick", `playSong(${song})`);
+    $(".active-teach").attr("onclick", `teach(${song})`);
+    hideRecord();
+  }
 }
 
 function playSong(song) {
@@ -216,59 +247,89 @@ function teach(song) {
   lastPlayedKey = undefined;
 
   if (teachSong === undefined && teachOn) {
-    let keyID = document.getElementById(song[gameLengthIndex]);
+    let keyID = document.getElementById(song[teachLengthIndex]);
     addComputerTeachActive(keyID);
 
     teachSong = setInterval(function () {
       playerInput.push(lastPlayedKey);
-      if (playerInput[gameLengthIndex] === song[gameLengthIndex]) {
+      if (playerInput[teachLengthIndex] === song[teachLengthIndex]) {
         if (playerInput.length !== song.length) {
-          gameLengthIndex++;
-          keyID = document.getElementById(song[gameLengthIndex]);
+          teachLengthIndex++;
+          keyID = document.getElementById(song[teachLengthIndex]);
           addComputerTeachActive(keyID);
         } else {
           stopAll();
         }
       } else {
         playerInput.pop();
-        keyID = document.getElementById(song[gameLengthIndex]);
+        keyID = document.getElementById(song[teachLengthIndex]);
         addComputerTeachActive(keyID);
       }
     }, 1500);
   }
 }
 
-function stopAll() {
-  clearInterval(playingSong);
-  clearInterval(teachSong);
-  teachSong = undefined;
-  playerInput = [];
-  gameLengthIndex = 0;
-  teachOn = false;
-  disableStop();
+function record() {
+  if (recording()) {
+    $("#record-btn")
+      .removeClass("btn-danger active active-r")
+      .addClass("btn-secondary");
+    enableTeach();
+    enableSongChoice();
+    enableActiveSong();
+  } else {
+    $("#record-btn")
+      .removeClass("btn-secondary")
+      .addClass(" active-r active btn-danger");
+    startRecording();
+    disableTeach();
+    disableSongChoice();
+  }
 }
 
-function changeActiveSong(name, song) {
-  stopAll();
-  
-  
-  if (name === "Play Recording") {
-    
-    $(".active-song").html(
-      `<i class="fas fa-play text-dark">  </i><i class="fas fa-music hvr-icon"></i> ${name} <i class="fas fa-music hvr-icon"></i>`
-    );
-    $(".active-song").attr("onclick", `playSong(${song})`);
-    $(".active-teach").attr("onclick", `teach(${song})`);
-    if (playRecording[0]===undefined){disableTeach(); disableActiveSong()}; 
-    showRecord();
-    
+function recording() {
+  return $("#record-btn").hasClass("active-r");
+}
+
+function startRecording() {
+  recordInput = [];
+  playRecording = [];
+}
+
+function recordNote(keyID) {
+  playRecording.push(keyID);
+}
+
+function switchInstrument(instrumentnum) {
+  instrument = instrumentnum;
+  if (instrumentnum === 1) {
+    noteLength = 1;
   } else {
-    $(".active-song").html(
-      `<i class="fas fa-play text-dark">  </i><i class="fas fa-music hvr-icon"></i> ${name} <i class="fas fa-music hvr-icon"></i>`
-    );
-    $(".active-song").attr("onclick", `playSong(${song})`);
-    $(".active-teach").attr("onclick", `teach(${song})`);
-    hideRecord();
+    noteLength = 2;
+  }
+}
+/*-- /Button Functions --*/
+/*------------- Jquery functions to enable/disable/hide/show elements -----------------*/
+function addComputerActive(keyID) {
+  $(keyID).addClass("active-comp");
+  setTimeout(function () {
+    $(keyID).removeClass("active-comp");
+  }, 300);
+}
+
+function addComputerTeachActive(keyID) {
+  $(keyID).addClass("active-comp");
+  setTimeout(function () {
+    $(keyID).removeClass("active-comp");
+  }, 500);
+}
+
+function footerFix(x) {
+  if (x.matches) {
+    // If media query matches
+    $(".footer-row").removeClass("fixed-bottom").addClass("absolute-bottom");
+  } else {
+    $(".footer-row").removeClass("absoulte-bottom").addClass("fixed-bottom");
   }
 }
 
@@ -320,18 +381,6 @@ function enableActiveSong() {
   $(".active-song").attr("tabindex", "1");
 }
 
-
-function switchInstrument(instrumentnum) {
-  instrument = instrumentnum;
-  if (instrumentnum === 1) {
-    noteLength = 1;
-  } else {
-    noteLength = 2;
-  }
-}
-
-notesOff();
-
 function notesOn() {
   $(".notetext").show();
   $(".notetext-b").show();
@@ -341,7 +390,7 @@ function notesOff() {
   $(".notetext").hide();
   $(".notetext-b").hide();
 }
-hideRecord();
+
 function showRecord() {
   $("#record-btn").show();
   $("#record-btn").show();
@@ -354,49 +403,5 @@ function hideRecord() {
 
 function hideInfoTablet() {
   $(".make-larger-info-tablet").addClass("collapse");
-  console.log("dismissed");
 }
-
-function record() {
-  if (recording()) {
-    $("#record-btn").removeClass("btn-danger active active-r").addClass("btn-secondary");
-    stopRecording();
-    enableTeach();
-    enableSongChoice();
-    enableActiveSong();
-  } else {
-    $("#record-btn").removeClass("btn-secondary").addClass(" active-r active btn-danger");
-    startRecording();
-    disableTeach();
-    disableSongChoice();
-  }
-}
-
-function recording() {
-  return $("#record-btn").hasClass("active-r");
-}
-
-function startRecording() {
-  recordInput = [];
-  playRecording = [];
-}
-
-function stopRecording() {
-  console.log(playRecording.length);
-}
-
-function recordNote(keyID) {
-  playRecording.push(keyID);
-}
-
-function footerFix(x) {
-  if (x.matches) { // If media query matches
-    $(".footer-row").removeClass("fixed-bottom").addClass("absolute-bottom");
-  } else {
-    $(".footer-row").removeClass("absoulte-bottom").addClass("fixed-bottom");
-  }
-}
-
-var windowHeight = window.matchMedia("(max-height: 308px)")
-footerFix(windowHeight) // Call listener function at run time
-windowHeight.addListener(footerFix) // Attach listener function on state changes
+/*-- /Jquery functions --*/
