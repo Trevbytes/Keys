@@ -335,19 +335,16 @@ function footerFix(x) {
 
 function enableStop() {
   $("#stop-button").attr("disabled", false);
-  $("#stop-button").attr("aria-disabled", "false");
   $("#stop-button").attr("tabindex", "1");
 }
 
 function disableStop() {
   $("#stop-button").attr("disabled", true);
-  $("#stop-button").attr("aria-disabled", "true");
   $("#stop-button").attr("tabindex", "-1");
 }
 
 function disableTeach() {
   $(".active-teach").attr("disabled", true);
-  $(".active-teach").attr("aria-disabled", "true");
   $(".active-teach").attr("tabindex", "-1");
 }
 

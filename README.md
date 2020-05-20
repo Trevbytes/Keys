@@ -1,8 +1,9 @@
 # Keys
 
-One or two paragraphs providing an overview of your project.
+Keys is my second milestone project while studying at [The Code Institute](https://codeinstitute.net/).
+The purpose of the milestone project is to present an interactive website built with HTML, CSS and Javascript.
 
-Essentially, this part is your sales pitch.
+Keys is a single webpage with an interactive keyboard built with Javascript with multiple features.
  
 ## UX
  
