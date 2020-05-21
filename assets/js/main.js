@@ -259,11 +259,11 @@ last stored item in the array is checked*/
 function teach(song) {
   stopAll();
   enableStop();
-  teachOn = true;//allows the teach function to work
-  lastPlayedKey = undefined;//clears the lastPlayedKey.
+  teachOn = true; //allows the teach function to work
+  lastPlayedKey = undefined; //clears the lastPlayedKey.
 
   if (teachOn) {
-      //shows first note
+    //shows first note
     let keyID = document.getElementById(song[teachLengthIndex]);
     addComputerTeachActive(keyID);
 
@@ -271,7 +271,7 @@ function teach(song) {
       playerInput.push(lastPlayedKey);
       //if the input matches the current note in the song
       if (playerInput[teachLengthIndex] === song[teachLengthIndex]) {
-          //if there is another note in the song
+        //if there is another note in the song
         if (playerInput.length !== song.length) {
           teachLengthIndex++;
           //shows next note
@@ -283,7 +283,7 @@ function teach(song) {
         }
         //the input does not match the current note
       } else {
-        playerInput.pop();//removes the wrong note in the playerInput array
+        playerInput.pop(); //removes the wrong note in the playerInput array
         //repeats the current note
         keyID = document.getElementById(song[teachLengthIndex]);
         addComputerTeachActive(keyID);
@@ -315,7 +315,7 @@ function record() {
   }
 }
 
-//Checks that the record button has been clicked 
+//Checks that the record button has been clicked
 function recording() {
   return $("#record-btn").hasClass("active-r");
 }
@@ -332,6 +332,10 @@ function recordNote(keyID) {
 }
 /*--/Recording Functions-- */
 
+/*This function receives 1 of 3 numbers '1','2','3'. It then sets
+that number for the instrument variable. If the instrument is an
+'1'(Organ) the note length is shorted to create a better audio
+sound.*/
 function switchInstrument(instrumentnum) {
   instrument = instrumentnum;
   if (instrumentnum === 1) {

@@ -4,36 +4,57 @@
 body {
   background-color: #ebc246;
   font-family: "Open Sans", sans-serif;
-}
-.piano-container {
-  padding: 0;
+  justify-content: center;
 }
 
-.page-title {
-  font-family: "Leckerli One", cursive;
+/*-------------------------Screen Overlay for small screens*/
+.make-larger-info {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(78, 78, 78);
+  z-index: 4;
+  cursor: pointer;
+  color: whitesmoke;
+  padding-top: 60%;
 }
+
+/*----Hides page content and shows the overlay on smaller screens*/
+@media screen and (max-width: 550px) {
+  .page-content {
+    display: none;
+  }
+
+  .make-larger-info {
+    display: block;
+  }
+}
+
+/*-----------------------------Alert Box for tablet sized screens*/
+.make-larger-info-tablet {
+  position: relative;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: black;
+  z-index: 4;
+  cursor: pointer;
+  color: whitesmoke;
+}
+
+/*---------------------------------------------Header*/
 .header {
   border-bottom: 2px solid black;
 }
 
-.settings {
-  text-align: right;
-}
-
-.footer-row {
-  border: 2px;
-  background-color: black;
-  color: white;
-}
-
-.navbar-brand {
-  padding-top: 0;
-  padding-bottom: 0;
-}
-.about-info {
-  color: white;
-  text-align: right;
-  padding-right: 2rem;
+.page-title {
+  font-family: "Leckerli One", cursive;
 }
 
 #song {
@@ -44,14 +65,36 @@ body {
   padding-bottom: 5px;
 }
 
-/*--------------Piano CSS code influenced by a YouTube tutorial by Kyle.  https://www.youtube.com/watch?v=vjco5yKZpU8 */
+.settings {
+  text-align: right;
+}
+/*---------------------------------------------Footer*/
+.footer-row {
+  border: 2px;
+  background-color: black;
+  color: white;
+}
+
+/*-- navbar-brand is used because the image in this class
+is used in some apps as a preview for the site --*/
+.navbar-brand {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.about-info {
+  color: white;
+  text-align: right;
+  padding-right: 2rem;
+}
+
+/*--------------Piano CSS, influenced by a YouTube tutorial by Kyle.  https://www.youtube.com/watch?v=vjco5yKZpU8 */
+.piano-container {
+  padding: 0;
+}
+
 *::before,
 *::after {
   box-sizing: border-box;
-}
-
-body {
-  justify-content: center;
 }
 
 .piano {
@@ -137,6 +180,7 @@ body {
   background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
 }
 
+/*--Media queries to resize the piano at diffrent screen sizes--*/
 @media screen and (min-width: 1000px) {
   .white {
     --width: 80px;
@@ -171,44 +215,8 @@ body {
   }
 }
 /*--------------End of Piano CSS code influenced by a YouTube tutorial by Kyle.  https://www.youtube.com/watch?v=vjco5yKZpU8 */
-.make-larger-info {
-  position: fixed;
-  display: none;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgb(78, 78, 78);
-  z-index: 4;
-  cursor: pointer;
-  color: whitesmoke;
-  padding-top: 60%;
-}
 
-@media screen and (max-width: 550px) {
-  .page-content {
-    display: none;
-  }
-
-  .make-larger-info {
-    display: block;
-  }
-}
-
-.make-larger-info-tablet {
-  position: relative;
-  width: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-color: black;
-  z-index: 4;
-  cursor: pointer;
-  color: whitesmoke;
-}
-
+/*--Class to turn off selection of text for notes on the piano--*/
 .no-select {
   user-select: none;
   -webkit-touch-callout: none;

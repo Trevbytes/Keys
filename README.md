@@ -108,10 +108,14 @@ All songs chosen in this project are in the Public Domain to avoid any issues wi
 
 - [Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools)
 
-  - The project used **Chrome Developer Tools** for debugging the webpage during development.
+  - The project uses **Chrome Developer Tools** for debugging the webpage during development.
 
 - [W3C Markup Validation Service](https://validator.w3.org)
-  - The project used **W3C Markup Validation** for validating code during development.
+
+  - The project uses **W3C Markup Validation** for validating code during development.
+
+- [Am I Responsive](http://ami.responsivedesign.is/)
+  - The ReadME used **Am I Responsive** for creating an image of the website on multiple displays to show responsiveness.
 
 ## Testing
 

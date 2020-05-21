@@ -1,151 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <!--Favicons by https://favicon.io/-->
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="./assets/images/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./assets/images/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="./assets/images/favicon-16x16.png"
-    />
-    <link rel="manifest" href="./assets/images/site.webmanifest" />
-    <!--Bootstrap 4.4.1-->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
-    />
-    <!--Hover-->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css"
-    />
-    <!-- My CSS stylesheet -->
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
-    <title>Keys</title>
-  </head>
 
-  <body>
-    <div class="make-larger-info container">
-      <div class="row">
-        <div class="col">
-          <h2>Welcome to Keys</h2>
-          <p>
-            Unfortunately your screen is currently not wide enough to use the
-            Keys piano.<br />
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<!--Favicons by https://favicon.io/-->
+	<link rel="apple-touch-icon" sizes="180x180" href="./assets/images/apple-touch-icon.png" />
+	<link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
+	<link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon-16x16.png" />
+	<link rel="manifest" href="./assets/images/site.webmanifest" />
+	<!--Bootstrap 4.4.1-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+	<!--Hover-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" />
+	<!-- My CSS stylesheet -->
+	<link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+	<title>Keys</title>
+</head>
+
+<body>
+	<!-- Overlay for small screens -->
+	<div class="make-larger-info container">
+		<div class="row">
+			<div class="col">
+				<h2>Welcome to Keys</h2>
+				<p>
+					Unfortunately your screen is currently not wide enough to use the
+					Keys piano.<br />
             Please rotate your screen or use a larger device.
           </p>
-        </div>
-      </div>
-    </div>
-    <div
-      class="alert alert-dark alert-dismissible make-larger-info-tablet d-none d-md-block d-lg-none"
-    >
-      <a href="#" class="close" data-dismiss="alert" aria-label="close"
-        >&times;</a
-      >
-      Rotate your device or expand your window for a better experience.
-    </div>
-    <header>
-      <div class="container page-content">
-        <div class="row header">
-          <div class="col page-title">
-            <h1>Keys</h1>
-          </div>
-          <div class="col my-auto">
-            <p class="my-auto">
-              Welcome to Keys!
-            </p>
-          </div>
-          <div class="col my-auto float-right settings">
-            <i
+			</div>
+		</div>
+	</div>
+	<!-- /Overlay -->
+	<!-- Alert for tablet sized screens -->
+	<div class="alert alert-dark alert-dismissible make-larger-info-tablet d-none d-md-block d-lg-none">
+		<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+		Rotate your device or expand your window for a better experience.
+	</div>
+	<!-- /Alert -->
+	<header>
+		<!-- Header Container -->
+		<div class="container page-content">
+			<div class="row header">
+				<div class="col page-title">
+					<h1>Keys</h1>
+				</div>
+				<div class="col-8 my-auto">
+					<p class="my-auto">
+						Learn to play a tune or record your own!
+					</p>
+				</div>
+				<div class="col-1 my-auto float-right settings">
+					<i
               class="fas fa-cogs fa-lg text-primary hvr-pulse"
               data-toggle="modal"
               data-target="#settingsModal"
             ></i>
-          </div>
-        </div>
-      </div>
-    </header>
-    <div
-      class="modal fade"
-      id="settingsModal"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="settingsModal"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-body">
-            Instruments:
-            <div class="btn-group" role="group" aria-label="Instruments">
-              <button
+				</div>
+			</div>
+		</div>
+		<!-- /Header Container -->
+	</header>
+	<!-- Settings Modal -->
+	<div class="modal fade" id="settingsModal" tabindex="-1" role="dialog" aria-labelledby="settingsModal"
+		aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-body">
+					Instruments:
+					<div class="btn-group" role="group" aria-label="Instruments">
+						<button
                 type="button"
                 class="btn btn-success"
                 onclick="switchInstrument(0)"
               >
                 Piano
               </button>
-              <button
+						<button
                 type="button"
                 class="btn btn-success"
                 onclick="switchInstrument(1)"
               >
                 Organ
               </button>
-              <button
+						<button
                 type="button"
                 class="btn btn-success"
                 onclick="switchInstrument(2)"
               >
                 Acoustic Guitar
               </button>
-            </div>
-            <br />
-            <br />
+					</div>
+					<br />
+					<br />
             Display Notes:
-            <div class="btn-group" role="group" aria-label="Display Notes">
-              <button type="button" class="btn btn-info" onclick="notesOn()">
+					<div class="btn-group" role="group" aria-label="Display Notes">
+						<button type="button" class="btn btn-info" onclick="notesOn()">
                 On
               </button>
-              <button type="button" class="btn btn-info" onclick="notesOff(1)">
+						<button type="button" class="btn btn-info" onclick="notesOff(1)">
                 Off
               </button>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button
               type="button"
               class="btn btn-secondary"
               data-dismiss="modal"
             >
               Close
             </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="container page-content">
-      <div class="row">
-        <div class="col piano-container">
-          <div class="col" id="song-info">
-            <span
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /Settings Modal -->
+	<!-- Piano Container -->
+	<div class="container page-content">
+		<div class="row">
+			<div class="col piano-container">
+				<!-- Stop, Record, Choose, Play, Teach Buttons -->
+				<div class="col" id="song-info">
+					<span
               ><button
                 type="button"
                 onclick="stopAll()"
@@ -156,17 +136,16 @@
               >
                 Stop <i class="fas fa-square text-dark"></i></button
             ></span>
-            <span
+					<span
               ><button
                 type="button"
                 onclick="teach(happyBirthdaySong)"
                 class="btn btn-primary btn-sm float-right active-teach"
               >
                 Teach Me
-              </button></span
-            >
-            <div id="song">
-              <button
+              </button></span>
+					<div id="song">
+						<button
                 type="button"
                 class="btn btn-secondary btn-sm"
                 id="record-btn"
@@ -174,10 +153,10 @@
               >
                 Record
               </button>
-              <!-- Split dropleft button -->
-              <div class="btn-group">
-                <div class="btn-group dropleft" role="group">
-                  <button
+						<!-- Split dropleft button -->
+						<div class="btn-group">
+							<div class="btn-group dropleft" role="group">
+								<button
                     type="button"
                     class="btn btn-success dropdown-toggle dropdown-toggle-split btn-sm song-choice"
                     data-toggle="dropdown"
@@ -186,8 +165,8 @@
                   >
                     <span class="sr-only">Toggle Dropleft</span>
                   </button>
-                  <div class="dropdown-menu">
-                    <button
+								<div class="dropdown-menu">
+									<button
                       class="dropdown-item"
                       type="button"
                       onclick="changeActiveSong('Happy Birthday','happyBirthdaySong')"
@@ -195,7 +174,7 @@
                       <i class="fas fa-music"></i> Happy Birthday
                       <i class="fas fa-music"></i>
                     </button>
-                    <button
+									<button
                       class="dropdown-item"
                       type="button"
                       onclick="changeActiveSong('Itzy Bitzy Spider','itzyBitzySpiderSong')"
@@ -203,7 +182,7 @@
                       <i class="fas fa-music"></i> Itzy Bitzy Spider
                       <i class="fas fa-music"></i>
                     </button>
-                    <button
+									<button
                       class="dropdown-item"
                       type="button"
                       onclick="changeActiveSong('The Wheels on the Bus','theWheelsOnTheBusSong')"
@@ -211,16 +190,16 @@
                       <i class="fas fa-music"></i> The Wheels on the Bus
                       <i class="fas fa-music"></i>
                     </button>
-                    <button
+									<button
                       class="dropdown-item"
                       type="button"
                       onclick="changeActiveSong('Play Recording','playRecording')"
                     >
                       Record Your Own!
                     </button>
-                  </div>
-                </div>
-                <button
+								</div>
+							</div>
+							<button
                   type="button"
                   onclick="playSong(happyBirthdaySong)"
                   class="btn btn-success btn-sm active-song mr-1 hvr-icon-pulse-grow song-choice"
@@ -229,171 +208,156 @@
                   <i class="fas fa-music hvr-icon"></i> Happy Birthday
                   <i class="fas fa-music hvr-icon"></i>
                 </button>
-              </div>
-            </div>
-          </div>
-          <div class="col piano">
-            <div class="key white hvr-glow" id="3F">
-              <span class="notetext">F</span>
-            </div>
-            <div class="key black hvr-glow" id="3F#">
-              <span class="notetext-b">F#</span>
-            </div>
-            <div class="key white hvr-glow" id="3G">
-              <span class="notetext">G</span>
-            </div>
-            <div class="key black hvr-glow" id="3G#">
-              <span class="notetext-b">G#</span>
-            </div>
-            <div class="key white hvr-glow" id="3A">
-              <span class="notetext">A</span>
-            </div>
-            <div class="key black hvr-glow" id="3A#">
-              <span class="notetext-b">A#</span>
-            </div>
-            <div class="key white hvr-glow" id="3B">
-              <span class="notetext">B</span>
-            </div>
-            <div class="key white hvr-glow" id="4C">
-              <span class="notetext">C</span>
-            </div>
-            <div class="key black hvr-glow" id="4C#">
-              <span class="notetext-b">C#</span>
-            </div>
-            <div class="key white hvr-glow" id="4D">
-              <span class="notetext">D</span>
-            </div>
-            <div class="key black hvr-glow" id="4D#">
-              <span class="notetext-b">D#</span>
-            </div>
-            <div class="key white hvr-glow" id="4E">
-              <span class="notetext">E</span>
-            </div>
-            <div class="key white hvr-glow" id="4F">
-              <span class="notetext">F</span>
-            </div>
-            <div class="key black hvr-glow" id="4F#">
-              <span class="notetext-b">F#</span>
-            </div>
-            <div class="key white hvr-glow" id="4G">
-              <span class="notetext">G</span>
-            </div>
-            <div class="key black hvr-glow" id="4G#">
-              <span class="notetext-b">G#</span>
-            </div>
-            <div class="key white hvr-glow" id="4A">
-              <span class="notetext">A</span>
-            </div>
-            <div class="key black hvr-glow" id="4A#">
-              <span class="notetext-b">A#</span>
-            </div>
-            <div class="key white hvr-glow" id="4B">
-              <span class="notetext">B</span>
-            </div>
-            <div class="key white hvr-glow" id="5C">
-              <span class="notetext">C</span>
-            </div>
-            <div class="key black hvr-glow" id="5C#">
-              <span class="notetext-b">C#</span>
-            </div>
-            <div class="key white hvr-glow" id="5D">
-              <span class="notetext">D</span>
-            </div>
-            <div class="key black hvr-glow" id="5D#">
-              <span class="notetext-b">D#</span>
-            </div>
-            <div class="key white hvr-glow" id="5E">
-              <span class="notetext">E</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <footer>
-      <div class="container footer-row fixed-bottom">
-        <div class="row">
-          <div class="col my-auto navbar-brand">
-            <img src="./assets/images/favicon-32x32.png" alt="Keys Favicon" />
-          </div>
-          <div class="copywrite my-auto">
-            <p class="my-auto small">&copy; Copywrite 2020 - Trevor Adams</p>
-          </div>
-          <div class="col about-info my-auto">
-            <p
-              data-toggle="modal"
-              data-target="#AboutModal"
-              class="my-auto hvr-pulse"
-            >
-              <i class="fas fa-info-circle"></i> About
-            </p>
-          </div>
-        </div>
-      </div>
-    </footer>
-    <div
-      class="modal fade"
-      id="AboutModal"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="AboutModal"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-body">
-            <p>
-              This site was created as a project for the Code Institute to
-              demonstrate my abilites of interactive web design. To Learn more
-              about how this site was created head over to my
-              <a href="https://github.com/Trevbytes/Keys">GitHub</a
-              ><i class="fab fa-github-square"></i><br />
+						</div>
+					</div>
+				</div>
+				<!-- /Buttons -->
+				<!-- Piano Keys -->
+				<div class="col piano">
+					<div class="key white hvr-glow" id="3F">
+						<span class="notetext">F</span>
+					</div>
+					<div class="key black hvr-glow" id="3F#">
+						<span class="notetext-b">F#</span>
+					</div>
+					<div class="key white hvr-glow" id="3G">
+						<span class="notetext">G</span>
+					</div>
+					<div class="key black hvr-glow" id="3G#">
+						<span class="notetext-b">G#</span>
+					</div>
+					<div class="key white hvr-glow" id="3A">
+						<span class="notetext">A</span>
+					</div>
+					<div class="key black hvr-glow" id="3A#">
+						<span class="notetext-b">A#</span>
+					</div>
+					<div class="key white hvr-glow" id="3B">
+						<span class="notetext">B</span>
+					</div>
+					<div class="key white hvr-glow" id="4C">
+						<span class="notetext">C</span>
+					</div>
+					<div class="key black hvr-glow" id="4C#">
+						<span class="notetext-b">C#</span>
+					</div>
+					<div class="key white hvr-glow" id="4D">
+						<span class="notetext">D</span>
+					</div>
+					<div class="key black hvr-glow" id="4D#">
+						<span class="notetext-b">D#</span>
+					</div>
+					<div class="key white hvr-glow" id="4E">
+						<span class="notetext">E</span>
+					</div>
+					<div class="key white hvr-glow" id="4F">
+						<span class="notetext">F</span>
+					</div>
+					<div class="key black hvr-glow" id="4F#">
+						<span class="notetext-b">F#</span>
+					</div>
+					<div class="key white hvr-glow" id="4G">
+						<span class="notetext">G</span>
+					</div>
+					<div class="key black hvr-glow" id="4G#">
+						<span class="notetext-b">G#</span>
+					</div>
+					<div class="key white hvr-glow" id="4A">
+						<span class="notetext">A</span>
+					</div>
+					<div class="key black hvr-glow" id="4A#">
+						<span class="notetext-b">A#</span>
+					</div>
+					<div class="key white hvr-glow" id="4B">
+						<span class="notetext">B</span>
+					</div>
+					<div class="key white hvr-glow" id="5C">
+						<span class="notetext">C</span>
+					</div>
+					<div class="key black hvr-glow" id="5C#">
+						<span class="notetext-b">C#</span>
+					</div>
+					<div class="key white hvr-glow" id="5D">
+						<span class="notetext">D</span>
+					</div>
+					<div class="key black hvr-glow" id="5D#">
+						<span class="notetext-b">D#</span>
+					</div>
+					<div class="key white hvr-glow" id="5E">
+						<span class="notetext">E</span>
+					</div>
+				</div>
+				<!-- /Piano Keys -->
+			</div>
+		</div>
+	</div>
+	<!-- /Piano Container -->
+	<footer>
+		<!-- /Footer Container -->
+		<div class="container footer-row fixed-bottom">
+			<div class="row">
+				<div class="col my-auto navbar-brand">
+					<img src="./assets/images/favicon-32x32.png" alt="Keys Favicon" />
+                </div>
+				<div class="copywrite my-auto">
+					<p class="my-auto small">&copy; Copywrite 2020 - Trevor Adams</p>
+				</div>
+				<div class="col about-info my-auto">
+					<p data-toggle="modal" data-target="#AboutModal" class="my-auto hvr-pulse">
+						<i class="fas fa-info-circle"></i> About
+					</p>
+				</div>
+			</div>
+		</div>
+			<!-- /Footer -->
+	</footer>
+	<!-- About Modal -->
+	<div class="modal fade" id="AboutModal" tabindex="-1" role="dialog" aria-labelledby="AboutModal" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-body">
+					<p>
+						This site was created as a project for the Code Institute to
+						demonstrate my abilites of interactive web design. To Learn more
+						about how this site was created head over to my
+						<a href="https://github.com/Trevbytes/Keys">GitHub</a><i class="fab fa-github-square"></i><br />
               The audio in Keys was created by Keith William Horwood using math
               to make sounds! His GitHub can be found
-              <a href="https://github.com/keithwhor/audiosynth">here</a
-              ><i class="fab fa-github-square"></i>
-            </p>
-          </div>
-          <div class="modal-footer">
-            <button
+						<a href="https://github.com/keithwhor/audiosynth">here</a><i class="fab fa-github-square"></i>
+					</p>
+				</div>
+				<div class="modal-footer">
+					<button
               type="button"
               class="btn btn-secondary"
               data-dismiss="modal"
             >
               Close
             </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--Scripts-->
-    <!--Scripts for Bootstrap 4.4.1-->
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-      crossorigin="anonymous"
-    ></script>
-    <!-- More Jquery-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!--Font Awesome-->
-    <script
-      src="https://kit.fontawesome.com/e0af4595f7.js"
-      crossorigin="anonymous"
-    ></script>
-
-    <!--Script for audio created by Keith Horwood, Github user keithwhor. https://github.com/keithwhor/audiosynth -->
-    <script src="./assets/js/audiosynth.js"></script>
-    <!--My Script-->
-    <script src="./assets/js/main.js"></script>
-    <!--/Scripts-->
-  </body>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /About Modal -->
+	<!--Scripts-->
+	<!--Scripts for Bootstrap 4.4.1-->
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+	</script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+	</script>
+	<!-- More Jquery-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<!--Font Awesome-->
+	<script src="https://kit.fontawesome.com/e0af4595f7.js" crossorigin="anonymous"></script>
+	<!--Script for audio created by Keith Horwood, Github user keithwhor. https://github.com/keithwhor/audiosynth -->
+	<script src="./assets/js/audiosynth.js"></script>
+	<!--My Script-->
+	<script src="./assets/js/main.js"></script>
+	<!--/Scripts-->
+</body>
 </html>
