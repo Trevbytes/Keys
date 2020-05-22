@@ -29,8 +29,8 @@
 				<p>
 					Unfortunately your screen is currently not wide enough to use the
 					Keys piano.<br />
-            Please rotate your screen or use a larger device.
-          </p>
+		            Please rotate your screen or use a larger device.
+		        </p>
 			</div>
 		</div>
 	</div>
@@ -55,10 +55,10 @@
 				</div>
 				<div class="col-1 my-auto float-right settings">
 					<i
-              class="fas fa-cogs fa-lg text-primary hvr-pulse"
-              data-toggle="modal"
-              data-target="#settingsModal"
-            ></i>
+		              class="fas fa-cogs fa-lg text-primary hvr-pulse"
+		              data-toggle="modal"
+		              data-target="#settingsModal"
+		            ></i>
 				</div>
 			</div>
 		</div>
@@ -73,49 +73,48 @@
 					Instruments:
 					<div class="btn-group" role="group" aria-label="Instruments">
 						<button
-                type="button"
-                class="btn btn-success active default-instrument"
-                onclick="switchInstrument(0)"
-              >
-                Piano
-              </button>
+			                type="button"
+			                class="btn btn-success active default-instrument"
+			                onclick="switchInstrument(0)"
+			              >
+			                Piano
+			            </button>
 						<button
-                type="button"
-                class="btn btn-success "
-                onclick="switchInstrument(1)"
-              >
-                Organ
-              </button>
+			                type="button"
+			                class="btn btn-success "
+			                onclick="switchInstrument(1)"
+			              >
+			                Organ
+			            </button>
 						<button
-                type="button"
-                class="btn btn-success"
-                onclick="switchInstrument(2)"
-              >
-                Acoustic Guitar
-              </button>
+			                type="button"
+			                class="btn btn-success"
+			                onclick="switchInstrument(2)"
+			              >
+			                Acoustic Guitar
+			            </button>
 					</div>
 					<br />
 					<br />
-            Display Notes:
-
+	                Display Notes:
+	
 					<div class="btn-group" role="group" aria-label="Display Notes">
 						<button type="button" class="btn btn-info active default-notes" onclick="notesOff(1)">
-                Off
-              </button>
+	                    Off
+	                    </button>
 						<button type="button" class="btn btn-info" onclick="notesOn()">
-                On
-              </button>
-
+	                    On
+	                    </button>	
 					</div>
 				</div>
 				<div class="modal-footer">
 					<button
-              type="button"
-              class="btn btn-secondary "
-              data-dismiss="modal"
-            >
-              Close
-            </button>
+	                    type="button"
+	                    class="btn btn-secondary "
+	                    data-dismiss="modal"
+	                    >
+	                    Close
+	                </button>
 				</div>
 			</div>
 		</div>
@@ -127,89 +126,91 @@
 			<div class="col piano-container">
 				<!-- Stop, Record, Choose, Play, Teach Buttons -->
 				<div class="col" id="song-info">
-					<span
-              ><button
-                type="button"
-                onclick="stopAll()"
-                class="btn btn-danger btn-sm"
-                disabled
-                tabindex="-1"
-                id="stop-button"
-              >
-                Stop <i class="fas fa-square text-dark"></i></button
-            ></span>
-					<span
-              ><button
-                type="button"
-                onclick="teach(happyBirthdaySong)"
-                class="btn btn-primary btn-sm float-right active-teach"
-              >
-                Teach Me
-              </button></span>
+					<span>
+                        <button
+                        type="button"
+                        onclick="stopAll()"
+                        class="btn btn-danger btn-sm"
+                        disabled
+                        tabindex="-1"
+                        id="stop-button"
+                        >
+                        Stop <i class="fas fa-square text-dark"></i>
+                        </button>
+                    </span>
+					<span>
+                        <button
+                        type="button"
+                        onclick="teach(happyBirthdaySong)"
+                        class="btn btn-primary btn-sm float-right active-teach"
+                        >
+                        Teach Me
+                        </button>
+                    </span>
 					<div id="song">
 						<button
-                type="button"
-                class="btn btn-secondary btn-sm"
-                id="record-btn"
-                onclick="record()"
-              >
-                Record
-              </button>
+                        type="button"
+                        class="btn btn-secondary btn-sm"
+                        id="record-btn"
+                        onclick="record()"
+                        >
+                        Record
+                        </button>
 						<!-- Split dropleft button -->
 						<div class="btn-group">
 							<div class="btn-group dropleft" role="group">
 								<button
-                    type="button"
-                    class="btn btn-success dropdown-toggle dropdown-toggle-split btn-sm song-choice"
-                    data-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                  >
-                    <span class="sr-only">Toggle Dropleft</span>
-                  </button>
+                                type="button"
+                                class="btn btn-success dropdown-toggle dropdown-toggle-split btn-sm song-choice"
+                                data-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                                >
+                                <span class="sr-only">Toggle Dropleft</span>
+                                </button>
 								<div class="dropdown-menu">
 									<button
-                      class="dropdown-item"
-                      type="button"
-                      onclick="changeActiveSong('Happy Birthday','happyBirthdaySong')"
-                    >
-                      <i class="fas fa-music"></i> Happy Birthday
-                      <i class="fas fa-music"></i>
-                    </button>
+                                    class="dropdown-item"
+                                    type="button"
+                                    onclick="changeActiveSong('Happy Birthday','happyBirthdaySong')"
+                                    >
+                                    <i class="fas fa-music"></i> Happy Birthday
+                                    <i class="fas fa-music"></i>
+                                    </button>
 									<button
-                      class="dropdown-item"
-                      type="button"
-                      onclick="changeActiveSong('Itzy Bitzy Spider','itzyBitzySpiderSong')"
-                    >
-                      <i class="fas fa-music"></i> Itzy Bitzy Spider
-                      <i class="fas fa-music"></i>
-                    </button>
+                                    class="dropdown-item"
+                                    type="button"
+                                    onclick="changeActiveSong('Itzy Bitzy Spider','itzyBitzySpiderSong')"
+                                    >
+                                    <i class="fas fa-music"></i> Itzy Bitzy Spider
+                                    <i class="fas fa-music"></i>
+                                    </button>
 									<button
-                      class="dropdown-item"
-                      type="button"
-                      onclick="changeActiveSong('The Wheels on the Bus','theWheelsOnTheBusSong')"
-                    >
-                      <i class="fas fa-music"></i> The Wheels on the Bus
-                      <i class="fas fa-music"></i>
-                    </button>
+                                    class="dropdown-item"
+                                    type="button"
+                                    onclick="changeActiveSong('The Wheels on the Bus','theWheelsOnTheBusSong')"
+                                    >
+                                    <i class="fas fa-music"></i> The Wheels on the Bus
+                                    <i class="fas fa-music"></i>
+                                    </button>
 									<button
-                      class="dropdown-item"
-                      type="button"
-                      onclick="changeActiveSong('Play Recording','playRecording')"
-                    >
-                      Record Your Own!
-                    </button>
+                                    class="dropdown-item"
+                                    type="button"
+                                    onclick="changeActiveSong('Play Recording','playRecording')"
+                                    >
+                                    Record Your Own!
+                                    </button>
 								</div>
 							</div>
 							<button
-                  type="button"
-                  onclick="playSong(happyBirthdaySong)"
-                  class="btn btn-success btn-sm active-song mr-1 hvr-icon-pulse-grow song-choice"
-                >
-                  <i class="fas fa-play text-dark"></i>
-                  <i class="fas fa-music hvr-icon"></i> Happy Birthday
-                  <i class="fas fa-music hvr-icon"></i>
-                </button>
+                            type="button"
+                            onclick="playSong(happyBirthdaySong)"
+                            class="btn btn-success btn-sm active-song mr-1 hvr-icon-pulse-grow song-choice"
+                            >
+                            <i class="fas fa-play text-dark"></i>
+                            <i class="fas fa-music hvr-icon"></i> Happy Birthday
+                            <i class="fas fa-music hvr-icon"></i>
+                            </button>
 						</div>
 					</div>
 				</div>
@@ -301,17 +302,17 @@
 				<div class="col my-auto navbar-brand">
 					<img src="./assets/images/favicon-32x32.png" alt="Keys Favicon" />
                 </div>
-					<div class="copywrite my-auto">
-						<p class="my-auto small">&copy; Copywrite 2020 - Trevor Adams</p>
-					</div>
-					<div class="col about-info my-auto">
-						<p data-toggle="modal" data-target="#AboutModal" class="my-auto hvr-pulse">
-							<i class="fas fa-info-circle"></i> About
-						</p>
-					</div>
+				<div class="copywrite my-auto">
+					<p class="my-auto small">&copy; Copywrite 2020 - Trevor Adams</p>
+				</div>
+				<div class="col about-info my-auto">
+					<p data-toggle="modal" data-target="#AboutModal" class="my-auto hvr-pulse">
+						<i class="fas fa-info-circle"></i> About
+					</p>
 				</div>
 			</div>
-			<!-- /Footer -->
+		</div>
+		<!-- /Footer -->
 	</footer>
 	<!-- About Modal -->
 	<div class="modal fade" id="AboutModal" tabindex="-1" role="dialog" aria-labelledby="AboutModal" aria-hidden="true">
@@ -323,19 +324,19 @@
 						demonstrate my abilites of interactive web design. To Learn more
 						about how this site was created head over to my
 						<a href="https://github.com/Trevbytes/Keys">GitHub</a><i class="fab fa-github-square"></i><br />
-              The audio in Keys was created by Keith William Horwood using math
-              to make sounds! His GitHub can be found
+                        The audio in Keys was created by Keith William Horwood using math
+                        to make sounds! His GitHub can be found
 						<a href="https://github.com/keithwhor/audiosynth">here</a><i class="fab fa-github-square"></i>
 					</p>
 				</div>
 				<div class="modal-footer">
 					<button
-              type="button"
-              class="btn btn-secondary"
-              data-dismiss="modal"
-            >
-              Close
-            </button>
+                    type="button"
+                    class="btn btn-secondary"
+                    data-dismiss="modal"
+                    >
+                    Close
+                    </button>
 				</div>
 			</div>
 		</div>
