@@ -139,6 +139,8 @@ Another interesting unintended feature was left in the site. When in the 'Teach 
 
 This project have been reviewed/tested by a senior web developer. A mentor provided by Code Institute during my studies.
 
+This project has been peer reviewed/tested within Code Institute's Slack channel.
+
 This project have been reviewed/tested by friends and family. This project has been texted extensively for interactivity.
 
 Some of the main testing of features included:
