@@ -335,7 +335,7 @@ function recordNote(keyID) {
 /*This function receives 1 of 3 numbers '1','2','3'. It then sets
 that number for the instrument variable. If the instrument is an
 '1'(Organ) the note length is shorted to create a better audio
-sound.*/
+sound. The default active class is removed from the Piano button. */
 function switchInstrument(instrumentnum) {
   instrument = instrumentnum;
   if (instrumentnum === 1) {
@@ -343,6 +343,7 @@ function switchInstrument(instrumentnum) {
   } else {
     noteLength = 2;
   }
+  $(".default-instrument").removeClass("active");
 }
 /*-- /Button Functions --*/
 /*------------- Jquery functions to enable/disable/hide/show elements -----------------*/
@@ -417,6 +418,7 @@ function enableActiveSong() {
 function notesOn() {
   $(".notetext").show();
   $(".notetext-b").show();
+  $(".default-notes").removeClass("active");
 }
 
 function notesOff() {

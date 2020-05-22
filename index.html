@@ -74,14 +74,14 @@
 					<div class="btn-group" role="group" aria-label="Instruments">
 						<button
                 type="button"
-                class="btn btn-success"
+                class="btn btn-success active default-instrument"
                 onclick="switchInstrument(0)"
               >
                 Piano
               </button>
 						<button
                 type="button"
-                class="btn btn-success"
+                class="btn btn-success "
                 onclick="switchInstrument(1)"
               >
                 Organ
@@ -97,19 +97,21 @@
 					<br />
 					<br />
             Display Notes:
+
 					<div class="btn-group" role="group" aria-label="Display Notes">
+						<button type="button" class="btn btn-info active default-notes" onclick="notesOff(1)">
+                Off
+              </button>
 						<button type="button" class="btn btn-info" onclick="notesOn()">
                 On
               </button>
-						<button type="button" class="btn btn-info" onclick="notesOff(1)">
-                Off
-              </button>
+
 					</div>
 				</div>
 				<div class="modal-footer">
 					<button
               type="button"
-              class="btn btn-secondary"
+              class="btn btn-secondary "
               data-dismiss="modal"
             >
               Close
@@ -299,16 +301,16 @@
 				<div class="col my-auto navbar-brand">
 					<img src="./assets/images/favicon-32x32.png" alt="Keys Favicon" />
                 </div>
-				<div class="copywrite my-auto">
-					<p class="my-auto small">&copy; Copywrite 2020 - Trevor Adams</p>
-				</div>
-				<div class="col about-info my-auto">
-					<p data-toggle="modal" data-target="#AboutModal" class="my-auto hvr-pulse">
-						<i class="fas fa-info-circle"></i> About
-					</p>
+					<div class="copywrite my-auto">
+						<p class="my-auto small">&copy; Copywrite 2020 - Trevor Adams</p>
+					</div>
+					<div class="col about-info my-auto">
+						<p data-toggle="modal" data-target="#AboutModal" class="my-auto hvr-pulse">
+							<i class="fas fa-info-circle"></i> About
+						</p>
+					</div>
 				</div>
 			</div>
-		</div>
 			<!-- /Footer -->
 	</footer>
 	<!-- About Modal -->
@@ -360,4 +362,5 @@
 	<script src="./assets/js/main.js"></script>
 	<!--/Scripts-->
 </body>
+
 </html>

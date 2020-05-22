@@ -121,7 +121,7 @@ All songs chosen in this project are in the Public Domain to avoid any issues wi
 
 This project has been tested for display responsiveness throughout development. I have tested the site in all display sizes in Chrome Dev Tools, Chrome, Firefox, Opera, Edge and Android devices.
 
-All modern browsers are supported. Older browsers such as IE are not suppported, currently there is no alert when using an older browser.
+All modern browsers are supported. Older browsers such as IE are not suppported due mainly to the use of CSS variables used when creating the piano, currently there is no alert when using an older browser.
 
 The testing and debugging of this project was doing extensively in Chrome Dev Tools. The process would typically go as follows:
 
@@ -133,7 +133,7 @@ The testing and debugging of this project was doing extensively in Chrome Dev To
 
 A testing framework such as [Jasmine](https://jasmine.github.io/) was not used as manual user testing was more appropriate for the interactivity required in this project.
 
-All bugs found during testing have been fixed. An interesting bug I can accross was when a user would click on 'Teach Me' and then a note would repeat even after a user clicked on a key. I fixed this bug and learned an important lesson in user experience. A new user that knows nothing of the website is learning how the site works. When the new user clicked on 'Teach Me', the first note would be displayed. The first time the note was displayed the user typically did not click on any key. If a user already knew they needed to click on the key, they would click on it before it would repeat. If no input was given before the note repeated, the function would get stuck in a loop and not allow any user input. I learned about user learning and intuition during the testing of this site.
+All bugs found during testing have been fixed. An interesting bug I can across was when a user would click on 'Teach Me' and then a note would repeat even after a user clicked on a key. I fixed this bug and learned an important lesson in user experience. A new user that knows nothing of the website is learning how the site works. When the new user clicked on 'Teach Me', the first note would be displayed. The first time the note was displayed the user typically did not click on any key. If a user already knew they needed to click on the key, they would click on it before it would repeat. If no input was given before the note repeated, the function would get stuck in a loop and not allow any user input. I learned about user learning and intuition during the testing of this site.
 
 Another interesting unintended feature was left in the site. When in the 'Teach Me' function a user can click as many keys as they want as long as the **last key** they played was correct. This was left and not fixed as this allows users to add flare to their tune, such as an extra note in Happy Birthday if the receiver of the Happy Birthday tune has a long name.
 
@@ -154,6 +154,10 @@ Some of the main testing of features included:
 ## Deployment
 
 This project is hosted on GitHub Pages with only [one deployed version](https://trevbytes.github.io/Keys/).
+
+Hosting a page from GitHub is as simple as locating the settings button at the top of your repository, clicking on it, then scrolling down to the GitHub Pages section. Here, under source, you can select the branch that GitHub Pages will Host
+
+![Image](./assets/images/githubpages.jpg)
 
 The GitHub Repository can be found [here](https://github.com/Trevbytes/Keys).
 
