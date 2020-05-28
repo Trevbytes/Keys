@@ -50,7 +50,7 @@ body {
 
 /*---------------------------------------------Header*/
 .header {
-  border-bottom: 2px solid black;
+  border-bottom: .1em solid black;
 }
 
 .page-title {
@@ -61,8 +61,8 @@ body {
   float: right;
 }
 #song-info {
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-top: .4em;
+  padding-bottom: .4em;
 }
 
 .settings {
@@ -70,7 +70,7 @@ body {
 }
 /*---------------------------------------------Footer*/
 .footer-row {
-  border: 2px;
+  border: .2em;
   background-color: black;
   color: white;
 }
@@ -84,7 +84,7 @@ is used in some apps as a preview for the site --*/
 .about-info {
   color: white;
   text-align: right;
-  padding-right: 2rem;
+  padding-right: 2em;
 }
 
 /*--------------Piano CSS, influenced by a YouTube tutorial by Kyle.  https://www.youtube.com/watch?v=vjco5yKZpU8 */
@@ -122,7 +122,7 @@ is used in some apps as a preview for the site --*/
   bottom: 0;
   padding-left: 30%;
   padding-bottom: 0.5rem;
-  font-size: 10px;
+  font-size: .6em;
   color: whitesmoke;
 }
 
