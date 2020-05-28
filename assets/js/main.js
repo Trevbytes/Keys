@@ -301,7 +301,8 @@ function record() {
   if (recording()) {
     $("#record-btn")
       .removeClass("btn-danger active active-r")
-      .addClass("btn-secondary");
+      .addClass("btn-secondary")
+    $('#record-btn').html($('#record-btn').html().replace('Stop Recording','Record'));
     enableTeach();
     enableSongChoice();
     enableActiveSong();
@@ -309,6 +310,7 @@ function record() {
     $("#record-btn")
       .removeClass("btn-secondary")
       .addClass(" active-r active btn-danger");
+    $('#record-btn').html($('#record-btn').html().replace('Record','Stop Recording'));
     startRecording();
     disableTeach();
     disableSongChoice();
