@@ -104,22 +104,25 @@
             <div class="btn-group" role="group" aria-label="Instruments">
               <button
                 type="button"
-                class="btn btn-success active default-instrument"
-                onclick="switchInstrument(0)"
+                class="btn btn-success active instrument"
+                id="piano-sound"
+                onclick="switchInstrument(0, this.id)"
               >
                 Piano
               </button>
               <button
                 type="button"
-                class="btn btn-success"
-                onclick="switchInstrument(1)"
+                class="btn btn-success instrument"
+                id="organ-sound"
+                onclick="switchInstrument(1, this.id)"
               >
                 Organ
               </button>
               <button
                 type="button"
-                class="btn btn-success"
-                onclick="switchInstrument(2)"
+                class="btn btn-success instrument"
+                id="guitar-sound"
+                onclick="switchInstrument(2, this.id)"
               >
                 Acoustic Guitar
               </button>
@@ -131,12 +134,18 @@
             <div class="btn-group" role="group" aria-label="Display Notes">
               <button
                 type="button"
-                class="btn btn-info active default-notes"
-                onclick="notesOff(1)"
+                class="btn btn-info notes-toggle active"
+                id="notes-off"
+                onclick="notesOff(this.id)"
               >
                 Off
               </button>
-              <button type="button" class="btn btn-info" onclick="notesOn()">
+              <button 
+                type="button"
+                class="btn btn-info notes-toggle"
+                id="notes-on"
+                onclick="notesOn(this.id)"
+              >
                 On
               </button>
             </div>
