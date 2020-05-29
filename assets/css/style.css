@@ -5,6 +5,7 @@ body {
   background-color: #ebc246;
   font-family: "Open Sans", sans-serif;
   justify-content: center;
+  top: 4em;
 }
 
 /*-------------------------Screen Overlay for small screens*/
@@ -51,6 +52,7 @@ body {
 /*---------------------------------------------Header*/
 .header {
   border-bottom: .1em solid black;
+  background: #ebc246 !important
 }
 
 .page-title {
@@ -69,11 +71,20 @@ body {
 .settings {
   text-align: right;
 }
+
+.landing-info {
+    top: 4em;
+    padding-bottom: 2em;
+    background-color: rgb(78, 78, 78);
+    color: white;
+}
+
 /*---------------------------------------------Footer*/
 .footer-row {
   border: .2em;
   background-color: black;
   color: white;
+  margin-top: 4.5em;
 }
 
 /*-- navbar-brand is used because the image in this class
