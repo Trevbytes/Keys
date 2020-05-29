@@ -55,6 +55,7 @@ body {
 
 .page-title {
   font-family: "Leckerli One", cursive;
+  padding-right: 0;
 }
 
 #song {

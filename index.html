@@ -43,17 +43,17 @@
   <body>
     <header>
       <!-- Header Container -->
-      <div class="container page-content sticky-top">
+      <div class="container fixed-top">
         <nav class="row header">
-          <div class="col page-title">
+          <div class="col-5 page-title">
             <h1> 
-                <a href="./index" class="text-decoration-none text-dark">
+                <a href="./index.html" class="text-decoration-none text-dark">
                 Keys 
                 <i class="fas fa-home fa-xs hvr-pulse" style="font-size: 1rem;"></i>
                 </a>
             </h1>
           </div>
-          <div class="col-8 my-auto">
+          <div class="col-5 my-auto">
             <a
               class="btn btn-success my-auto"
               href="./piano.html"
@@ -66,181 +66,58 @@
       </div>
       <!-- /Header Container -->
     </header>
-    <!-- Piano Container -->
-    <main class="container page-content">
-      <div class="row">
-        <div class="col piano-container">
-          <!-- Stop, Record, Choose, Play, Teach Buttons -->
-          <div class="col" id="song-info">
-            <span>
-              <button
-                type="button"
-                onclick="stopAll()"
-                class="btn btn-danger btn-sm"
-                disabled
-                tabindex="-1"
-                id="stop-button"
-              >
-                Stop <i class="fas fa-square text-dark"></i>
-              </button>
-            </span>
-            <span>
-              <button
-                type="button"
-                onclick="teach(happyBirthdaySong)"
-                class="btn btn-primary btn-sm float-right active-teach"
-              >
-                Teach Me
-              </button>
-            </span>
-            <div id="song">
-              <button
-                type="button"
-                class="btn btn-secondary btn-sm"
-                id="record-btn"
-                onclick="record()"
-              >
-                Record
-              </button>
-              <!-- Split dropleft button -->
-              <div class="btn-group">
-                <div class="btn-group dropleft" role="group">
-                  <button
-                    type="button"
-                    class="btn btn-success dropdown-toggle dropdown-toggle-split btn-sm song-choice"
-                    data-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                  >
-                    <span class="sr-only">Toggle Dropleft</span>
-                  </button>
-                  <div class="dropdown-menu">
-                    <button
-                      class="dropdown-item"
-                      type="button"
-                      onclick="changeActiveSong('Happy Birthday','happyBirthdaySong')"
-                    >
-                      <i class="fas fa-music"></i> Happy Birthday
-                      <i class="fas fa-music"></i>
-                    </button>
-                    <button
-                      class="dropdown-item"
-                      type="button"
-                      onclick="changeActiveSong('Itzy Bitzy Spider','itzyBitzySpiderSong')"
-                    >
-                      <i class="fas fa-music"></i> Itzy Bitzy Spider
-                      <i class="fas fa-music"></i>
-                    </button>
-                    <button
-                      class="dropdown-item"
-                      type="button"
-                      onclick="changeActiveSong('The Wheels on the Bus','theWheelsOnTheBusSong')"
-                    >
-                      <i class="fas fa-music"></i> The Wheels on the Bus
-                      <i class="fas fa-music"></i>
-                    </button>
-                    <button
-                      class="dropdown-item"
-                      type="button"
-                      onclick="changeActiveSong('Play Recording','playRecording')"
-                    >
-                      Record Your Own!
-                    </button>
-                  </div>
-                </div>
-                <button
-                  type="button"
-                  onclick="playSong(happyBirthdaySong)"
-                  class="btn btn-success btn-sm active-song mr-1 hvr-icon-pulse-grow song-choice"
-                >
-                  <i class="fas fa-play text-dark"></i>
-                  <i class="fas fa-music hvr-icon"></i> Happy Birthday
-                  <i class="fas fa-music hvr-icon"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-          <!-- /Buttons -->
-          <!-- Piano Keys -->
-          <div class="col piano">
-            <div class="key white hvr-glow" id="3F">
-              <span class="notetext">F</span>
-            </div>
-            <div class="key black hvr-glow" id="3F#">
-              <span class="notetext-b">F#</span>
-            </div>
-            <div class="key white hvr-glow" id="3G">
-              <span class="notetext">G</span>
-            </div>
-            <div class="key black hvr-glow" id="3G#">
-              <span class="notetext-b">G#</span>
-            </div>
-            <div class="key white hvr-glow" id="3A">
-              <span class="notetext">A</span>
-            </div>
-            <div class="key black hvr-glow" id="3A#">
-              <span class="notetext-b">A#</span>
-            </div>
-            <div class="key white hvr-glow" id="3B">
-              <span class="notetext">B</span>
-            </div>
-            <div class="key white hvr-glow" id="4C">
-              <span class="notetext">C</span>
-            </div>
-            <div class="key black hvr-glow" id="4C#">
-              <span class="notetext-b">C#</span>
-            </div>
-            <div class="key white hvr-glow" id="4D">
-              <span class="notetext">D</span>
-            </div>
-            <div class="key black hvr-glow" id="4D#">
-              <span class="notetext-b">D#</span>
-            </div>
-            <div class="key white hvr-glow" id="4E">
-              <span class="notetext">E</span>
-            </div>
-            <div class="key white hvr-glow" id="4F">
-              <span class="notetext">F</span>
-            </div>
-            <div class="key black hvr-glow" id="4F#">
-              <span class="notetext-b">F#</span>
-            </div>
-            <div class="key white hvr-glow" id="4G">
-              <span class="notetext">G</span>
-            </div>
-            <div class="key black hvr-glow" id="4G#">
-              <span class="notetext-b">G#</span>
-            </div>
-            <div class="key white hvr-glow" id="4A">
-              <span class="notetext">A</span>
-            </div>
-            <div class="key black hvr-glow" id="4A#">
-              <span class="notetext-b">A#</span>
-            </div>
-            <div class="key white hvr-glow" id="4B">
-              <span class="notetext">B</span>
-            </div>
-            <div class="key white hvr-glow" id="5C">
-              <span class="notetext">C</span>
-            </div>
-            <div class="key black hvr-glow" id="5C#">
-              <span class="notetext-b">C#</span>
-            </div>
-            <div class="key white hvr-glow" id="5D">
-              <span class="notetext">D</span>
-            </div>
-            <div class="key black hvr-glow" id="5D#">
-              <span class="notetext-b">D#</span>
-            </div>
-            <div class="key white hvr-glow" id="5E">
-              <span class="notetext">E</span>
-            </div>
-          </div>
-          <!-- /Piano Keys -->
+
+    <main class="container landing-info">
+        <article class="row" >
+        <div class="col bg-dark text-light mt-8 rounded">
+            <h2>Welcome to Keys!</h2>
+            <p>
+                Have you ever wondered how play a tune like “Happy Birthday” on the piano?
+                This could be the site for you! <br/>
+                Keys purpose is to teach simple tunes by guiding you note by note through a 
+                tune. <br/>
+                As an added feature, you can even record your own tune to show off or even
+                teach to others!
+            </p>
+            <h2>Instructions</h2>
+            <p>
+                After clicking on Start Playing you will be taken to the simple piano. There 
+                you can:
+            </p>
+            <h4>Select a Tune</h4>
+            <p> 
+                Choose your tune, or the record your own option.
+            </p>
+            <h4>Play the Tune</h4>
+            <p>
+                Click to play the tune. Clicking on the button again will restart the
+                selected tune.
+            </p>
+            <h4>Teach the Selected Tune</h4>
+            <p>
+                Follow the displayed notes on the keyboard. If the last note you played was
+                wrong, try the displayed note again.
+                The stop button will stop any tunes being taught or being played.
+            </p>
+            <h4>Record</h4>
+            <p>
+                When “Record your own!” is selected this button will appear. When clicked
+                all keys you click will be recorded. To Stop recording press Stop Recording. 
+                Your tune is now saved and can be played back or taught.
+                By clicking on the options button, you can change the sounds the piano makes 
+                as well as display the names of the notes of the keys.  
+            </p>
+            <h6>Please Note</h6>
+            <p>
+                The Keys piano works on all modern browsers such as Firefox, Chrome, 
+                Opera, Safari. If you are unable to view the piano, consider upgrading 
+                your browser.
+            </p>
         </div>
-      </div>
+
+        </article>
     </main>
-    <!-- /Piano Container -->
+ 
     <footer>
       <!-- /Footer Container -->
       <div class="container footer-row fixed-bottom">
