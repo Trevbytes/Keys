@@ -17,7 +17,7 @@ The site is designed for mobile phones in landscape view. Keeping the layout of 
 
 With a recording feature added, this site has evolved to also cater to users wanting to teach a song to another user.
 
-The sites [wireframes](https://github.com/Trevbytes/Keys/blob/master/keys-wireframe.pdf) show the original idea for the site. Design changes were made during the consturction of the site to keep the site clean and free from extensive text.
+The sites [wireframes](https://github.com/Trevbytes/Keys/blob/master/wireframes/keys-wireframe.pdf) show the original idea for the site. Design changes were made during the consturction of the site to keep the site clean and free from extensive text.
 
 Bright colors were chosen to engage the user and highlight buttons.
 
