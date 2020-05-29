@@ -161,7 +161,7 @@ windowHeight.addListener(footerFix); // Attaches listener function on state chan
 footerFix(windowHeight);
 $(".notetext").addClass("no-select");
 $(".notetext-b").addClass("no-select");
-notesOff();
+notesOff("runtime");
 hideRecord();
 /*-- /Runtime Events --*/
 /*------------------------------- Button Functions -------------------------------------*/
@@ -428,8 +428,10 @@ function notesOn(notesOnID) {
 function notesOff(notesOffID) {
   $(".notetext").hide();
   $(".notetext-b").hide();
-  $('.notes-toggle').removeClass("active");
-  $("#"+notesOffID).addClass("active");
+  if (notesOffID!="runtime") {
+    $('.notes-toggle').removeClass("active");
+    $("#"+notesOffID).addClass("active");
+  }
 }
 
 function showRecord() {
