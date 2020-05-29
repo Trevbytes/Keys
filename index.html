@@ -41,128 +41,31 @@
   </head>
 
   <body>
-    <!-- Overlay for small screens -->
-    <div class="make-larger-info container">
-      <div class="row">
-        <div class="col">
-          <h2>Welcome to Keys</h2>
-          <p>
-            Unfortunately your screen is currently not wide enough to use the
-            Keys piano.<br />
-            Please rotate your screen or use a larger device.
-          </p>
-        </div>
-      </div>
-    </div>
-    <!-- /Overlay -->
-    <!-- Alert for tablet sized screens -->
-    <div
-      class="alert alert-dark alert-dismissible make-larger-info-tablet d-none d-md-block d-lg-none"
-    >
-      <a href="#" class="close" data-dismiss="alert" aria-label="close"
-        >&times;</a
-      >
-      Rotate your device or expand your window for a better experience.
-    </div>
-    <!-- /Alert -->
     <header>
       <!-- Header Container -->
-      <div class="container page-content">
-        <div class="row header">
+      <div class="container page-content sticky-top">
+        <nav class="row header">
           <div class="col page-title">
-            <h1>Keys</h1>
+            <h1> 
+                <a href="./index" class="text-decoration-none text-dark">
+                Keys 
+                <i class="fas fa-home fa-xs hvr-pulse" style="font-size: 1rem;"></i>
+                </a>
+            </h1>
           </div>
           <div class="col-8 my-auto">
-            <p class="my-auto">
-              Learn to play a tune or record your own!
-            </p>
+            <a
+              class="btn btn-success my-auto"
+              href="./piano.html"
+              role="button"
+            >
+            Start Playing 
+            </a>
           </div>
-          <div class="col-1 my-auto float-right settings">
-            <i
-              class="fas fa-cogs fa-lg text-primary hvr-pulse"
-              data-toggle="modal"
-              data-target="#settingsModal"
-            ></i>
-          </div>
-        </div>
+        </nav>
       </div>
       <!-- /Header Container -->
     </header>
-    <!-- Settings Modal -->
-    <div
-      class="modal fade"
-      id="settingsModal"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="settingsModal"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-body">
-            Instruments:
-            <div class="btn-group" role="group" aria-label="Instruments">
-              <button
-                type="button"
-                class="btn btn-success active instrument"
-                id="piano-sound"
-                onclick="switchInstrument(0, this.id)"
-              >
-                Piano
-              </button>
-              <button
-                type="button"
-                class="btn btn-success instrument"
-                id="organ-sound"
-                onclick="switchInstrument(1, this.id)"
-              >
-                Organ
-              </button>
-              <button
-                type="button"
-                class="btn btn-success instrument"
-                id="guitar-sound"
-                onclick="switchInstrument(2, this.id)"
-              >
-                Acoustic Guitar
-              </button>
-            </div>
-            <br />
-            <br />
-            Display Notes:
-
-            <div class="btn-group" role="group" aria-label="Display Notes">
-              <button
-                type="button"
-                class="btn btn-info notes-toggle active"
-                id="notes-off"
-                onclick="notesOff(this.id)"
-              >
-                Off
-              </button>
-              <button 
-                type="button"
-                class="btn btn-info notes-toggle"
-                id="notes-on"
-                onclick="notesOn(this.id)"
-              >
-                On
-              </button>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-dismiss="modal"
-            >
-              Close
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- /Settings Modal -->
     <!-- Piano Container -->
     <main class="container page-content">
       <div class="row">
