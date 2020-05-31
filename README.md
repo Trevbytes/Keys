@@ -39,7 +39,7 @@ All songs chosen in this project are in the Public Domain to avoid any issues wi
 - A user starts the site, goes directly to the piano and is unsure what they can do with the piano. 
     - At any point the user is unsure what to do a user can click on the home button in the header or the Keys icon in the footer. This will return them to the landing page where they can read the instructions for the site.
 
-![Image](./assets/images/user_stories/home.jpg) ![Image](./assets/images/user_stories/icon.jpg) ![Image](./assets/images/user_stories/landing-page.jpg)
+    ![Image](./assets/images/user_stories/home.jpg) ![Image](./assets/images/user_stories/icon.jpg) ![Image](./assets/images/user_stories/landing-page.jpg)
 - A user wants to know more about the site.
     - The user clicks on the about button located in the footer. ![Image](./assets/images/user_stories/about-btn.jpg) ![Image](./assets/images/user_stories/about.jpg)
 ## Features
