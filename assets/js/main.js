@@ -119,6 +119,8 @@ const happyBirthdaySong = [
     "4G",
   ];
 let playRecording = [];
+//Retrieves stored recording from local cache 
+playRecording = JSON.parse(localStorage.getItem("storedRecording"));
 /*-- /Song Arrays --*/
 /*------------------------------- Runtime Events -------------------------------------*/
 /*------------- Event Listeners -----------------*/
@@ -309,6 +311,8 @@ function record() {
     enableTeach();
     enableSongChoice();
     enableActiveSong();
+    //Stores the recording to the local cache
+    localStorage.setItem("storedRecording", JSON.stringify(playRecording));
   } else {
     $("#record-btn").addClass(" active-r active");
     $("#record-btn").html(
