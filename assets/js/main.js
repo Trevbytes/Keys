@@ -294,21 +294,22 @@ function teach(song) {
 
 /*----------------Recording functions----------------------- */
 
-/*This function is called every time a key is clicked. If the recording
-button has been activated the function runs the code. Otherwise nothing is
-done. The function then checks if the recording button has been clicked.*/
+/*This function is called every time a key is clicked. If the user is recording by
+clicking on the 'Record' button, the first 'if' statement is run. It changes the record
+button to an off state and enables the other buttons. If the user is not recording and 
+clicks on Record, the else statement runs. Buttons are disabled and the button text 
+changes to 'Stop Recording'. The 'startRecording' function is called, which resets
+the arrays 'recordInput' and 'playRecording'. */
 function record() {
   if (recording()) {
     $("#record-btn")
       .removeClass("btn-danger active active-r")
-      .addClass("btn-secondary")
     $('#record-btn').html($('#record-btn').html().replace('Stop Recording','Record'));
     enableTeach();
     enableSongChoice();
     enableActiveSong();
   } else {
     $("#record-btn")
-      .removeClass("btn-secondary")
       .addClass(" active-r active btn-danger");
     $('#record-btn').html($('#record-btn').html().replace('Record','Stop Recording'));
     startRecording();
