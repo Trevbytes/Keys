@@ -36,6 +36,12 @@ body {
   }
 }
 
+@media screen and (max-width:575px) {
+  .instructions {
+    text-align: left !important;
+  }  
+}
+
 /*-----------------------------Alert Box for tablet sized screens*/
 .make-larger-info-tablet {
   position: relative;
