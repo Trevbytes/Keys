@@ -17,5 +17,5 @@
   "background_color": "#ebc246",
   "display": "fullscreen",
   "start_url": "./piano.html",
-  "orientation": "portrait-primary"
+  "orientation": "landscape-primary"
 }
