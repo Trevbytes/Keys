@@ -5,6 +5,7 @@ body {
   background-color: #ebc246;
   font-family: "Open Sans", sans-serif;
   justify-content: center;
+  top: 4em;
 }
 
 /*-------------------------Screen Overlay for small screens*/
@@ -35,6 +36,12 @@ body {
   }
 }
 
+@media screen and (max-width:575px) {
+  .instructions {
+    text-align: left !important;
+  }  
+}
+
 /*-----------------------------Alert Box for tablet sized screens*/
 .make-larger-info-tablet {
   position: relative;
@@ -51,10 +58,16 @@ body {
 /*---------------------------------------------Header*/
 .header {
   border-bottom: .1em solid black;
+  background: #ebc246 !important
 }
 
 .page-title {
   font-family: "Leckerli One", cursive;
+  padding-right: 0;
+}
+
+.home-btn {
+    font-size: 1rem !important;
 }
 
 #song {
@@ -68,11 +81,26 @@ body {
 .settings {
   text-align: right;
 }
+
+.landing-info {
+    background-color: #333333;
+    color: white;
+}
+
+.landing-info-top {
+    margin-top: 4em;    
+}
+
+.landing-info-bottom {
+    padding-bottom: 2em;   
+}
+
 /*---------------------------------------------Footer*/
 .footer-row {
   border: .2em;
   background-color: black;
   color: white;
+  margin-top: 4.5em;
 }
 
 /*-- navbar-brand is used because the image in this class

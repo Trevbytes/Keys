@@ -119,6 +119,8 @@ const happyBirthdaySong = [
     "4G",
   ];
 let playRecording = [];
+//Retrieves stored recording from local cache 
+playRecording = JSON.parse(localStorage.getItem("storedRecording"));
 /*-- /Song Arrays --*/
 /*------------------------------- Runtime Events -------------------------------------*/
 /*------------- Event Listeners -----------------*/
@@ -161,7 +163,7 @@ windowHeight.addListener(footerFix); // Attaches listener function on state chan
 footerFix(windowHeight);
 $(".notetext").addClass("no-select");
 $(".notetext-b").addClass("no-select");
-notesOff();
+notesOff("runtime");
 hideRecord();
 /*-- /Runtime Events --*/
 /*------------------------------- Button Functions -------------------------------------*/
@@ -294,23 +296,28 @@ function teach(song) {
 
 /*----------------Recording functions----------------------- */
 
-/*This function is called every time a key is clicked. If the recording
-button has been activated the function runs the code. Otherwise nothing is
-done. The function then checks if the recording button has been clicked.*/
+/*This function is called every time a key is clicked. If the user is recording by
+clicking on the 'Record' button, the first 'if' statement is run. It changes the record
+button to an off state and enables the other buttons. If the user is not recording and 
+clicks on Record, the else statement runs. Buttons are disabled and the button text 
+changes to 'Stop Recording'. The 'startRecording' function is called, which resets
+the arrays 'recordInput' and 'playRecording'. */
 function record() {
   if (recording()) {
-    $("#record-btn")
-      .removeClass("btn-danger active active-r")
-      .addClass("btn-secondary")
-    $('#record-btn').html($('#record-btn').html().replace('Stop Recording','Record'));
+    $("#record-btn").removeClass("active active-r");
+    $("#record-btn").html(
+      $("#record-btn").html().replace("Stop Recording", "Record New")
+    );
     enableTeach();
     enableSongChoice();
     enableActiveSong();
+    //Stores the recording to the local cache
+    localStorage.setItem("storedRecording", JSON.stringify(playRecording));
   } else {
-    $("#record-btn")
-      .removeClass("btn-secondary")
-      .addClass(" active-r active btn-danger");
-    $('#record-btn').html($('#record-btn').html().replace('Record','Stop Recording'));
+    $("#record-btn").addClass(" active-r active");
+    $("#record-btn").html(
+      $("#record-btn").html().replace("Record New", "Stop Recording")
+    );
     startRecording();
     disableTeach();
     disableSongChoice();
@@ -345,8 +352,8 @@ function switchInstrument(instrumentnum, soundID) {
   } else {
     noteLength = 2;
   }
-  $('.instrument').removeClass("active");
-  $("#"+soundID).addClass("active");
+  $(".instrument").removeClass("active");
+  $("#" + soundID).addClass("active");
 }
 /*-- /Button Functions --*/
 /*------------- Jquery functions to enable/disable/hide/show elements -----------------*/
@@ -418,18 +425,20 @@ function enableActiveSong() {
   $(".active-song").attr("tabindex", "1");
 }
 
-function notesOn(notesOnID) {    
+function notesOn(notesOnID) {
   $(".notetext").show();
   $(".notetext-b").show();
-  $('.notes-toggle').removeClass("active");
-  $("#"+notesOnID).addClass("active");
+  $(".notes-toggle").removeClass("active");
+  $("#" + notesOnID).addClass("active");
 }
 
 function notesOff(notesOffID) {
   $(".notetext").hide();
   $(".notetext-b").hide();
-  $('.notes-toggle').removeClass("active");
-  $("#"+notesOffID).addClass("active");
+  if (notesOffID != "runtime") {
+    $(".notes-toggle").removeClass("active");
+    $("#" + notesOffID).addClass("active");
+  }
 }
 
 function showRecord() {
