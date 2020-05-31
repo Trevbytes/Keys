@@ -79,10 +79,16 @@ body {
 }
 
 .landing-info {
-    top: 4em;
-    padding-bottom: 2em;
     background-color: #333333;
     color: white;
+}
+
+.landing-info-top {
+    margin-top: 4em;    
+}
+
+.landing-info-bottom {
+    padding-bottom: 2em;   
 }
 
 /*---------------------------------------------Footer*/
