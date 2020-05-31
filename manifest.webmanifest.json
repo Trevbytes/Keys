@@ -13,10 +13,9 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
+  "theme_color": "white",
+  "background_color": "#ebc246",
   "display": "fullscreen",
-  "start_url": "/piano",
-  "scope": "/",
+  "start_url": "./piano.html",
   "orientation": "portrait-primary"
 }
