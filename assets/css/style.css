@@ -211,7 +211,7 @@ is used in some apps as a preview for the site --*/
 /*--Media queries to resize the piano at diffrent screen sizes--*/
 @media screen and (min-width: 1000px) {
   .white {
-    --width: 80px;
+    --width: 85px;
     background-color: white;
     border: 1px solid #333;
   }
@@ -226,7 +226,7 @@ is used in some apps as a preview for the site --*/
   }
 }
 
-@media screen and (min-width: 1600px) {
+@media screen and (min-width: 1200px) {
   .white {
     --width: 100px;
     background-color: white;
