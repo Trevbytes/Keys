@@ -32,7 +32,7 @@ All songs chosen in this project are in the Public Domain to avoid any issues wi
 - A music teacher wants to help a student learn.
     - The music teach could turn on the names of the keys in the settings button and then records a tune they want the student to learn. ![Image](./assets/images/user_stories/cogs.jpg) ![Image](./assets/images/user_stories/options.jpg)
 - A user wants to pass time by playing a simple piano.
-    - The user could change the sound of the piano for even more fun while playing the piano. ![Image](./assets/images/cogs.jpg)
+    - The user could change the sound of the piano for even more fun while playing the piano. ![Image](./assets/images/user_stories/cogs.jpg)
 - A user is going to a Birthday party where there will be a piano. The user wants to impress people by playing Happy Birthday on the piano. The user can learn and practice the notes before hand on this website.
 - A user is singing to a child and wants music to accompany. 
     - The user can play the songs from this website while singing or even have the child play/learn the song. ![Image](./assets/images/user_stories/click-play.jpg)
