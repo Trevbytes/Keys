@@ -190,7 +190,7 @@ function changeActiveSong(name, song) {
     );
     $(".active-song").attr("onclick", `playSong(${song})`);
     $(".active-teach").attr("onclick", `teach(${song})`);
-    if (playRecording[0] === undefined) {
+    if (playRecording === undefined || playRecording === null) {
       //if there is no song recorded this disables buttons to guide the user to the record button.
       disableTeach();
       disableActiveSong();
