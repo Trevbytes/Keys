@@ -1,6 +1,6 @@
 # Keys
 
-![Image](./assets/images/am-i-responsive.jpg)
+![Image](./assets/images/am-i-responsive-update.jpg)
 
 Keys is my second milestone project while studying at [The Code Institute](https://codeinstitute.net/).
 The purpose of the milestone project is to present an interactive website built with HTML, CSS and Javascript.
