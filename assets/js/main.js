@@ -303,14 +303,14 @@ the arrays 'recordInput' and 'playRecording'. */
 function record() {
   if (recording()) {
     $("#record-btn")
-      .removeClass("btn-danger active active-r")
+      .removeClass("active active-r")
     $('#record-btn').html($('#record-btn').html().replace('Stop Recording','Record'));
     enableTeach();
     enableSongChoice();
     enableActiveSong();
   } else {
     $("#record-btn")
-      .addClass(" active-r active btn-danger");
+      .addClass(" active-r active");
     $('#record-btn').html($('#record-btn').html().replace('Record','Stop Recording'));
     startRecording();
     disableTeach();
