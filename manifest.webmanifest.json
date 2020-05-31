@@ -15,7 +15,5 @@
   ],
   "theme_color": "white",
   "background_color": "#ebc246",
-  "display": "fullscreen",
-  "start_url": "./piano.html",
-  "orientation": "landscape-primary"
+  "start_url": "./piano.html"
 }
