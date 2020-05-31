@@ -66,6 +66,10 @@ body {
   padding-right: 0;
 }
 
+.home-btn {
+    font-size: 1rem !important;
+}
+
 #song {
   float: right;
 }
