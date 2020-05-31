@@ -26,12 +26,22 @@ All songs chosen in this project are in the Public Domain to avoid any issues wi
 ### User Stories
 
 - A user wants to learn how to play simple tunes on the piano.
-- A user wants to teach a friend a simple tune on the piano.
+    - The user clicks on 'Teach Me' and follows along with the selected tune. ![Image](./assets/images/user_stories/teach-me.jpg)
+- A user wants to teach a friend a recorded tune on the piano.
+    - The user clicks navigates to the record option, records a tune, then the friend clicks on 'Teach Me'. ![Image](./assets/images/user_stories/nav-to-record.jpg) ![Image](./assets/images/user_stories/record-btn.jpg) ![Image](./assets/images/user_stories/recording.jpg) ![Image](./assets/images/user_stories/teach-recording.jpg)
 - A music teacher wants to help a student learn.
+    - The music teach could turn on the names of the keys in the settings button and then records a tune they want the student to learn. ![Image](./assets/images/user_stories/cogs.jpg) ![Image](./assets/images/user_stories/options.jpg)
 - A user wants to pass time by playing a simple piano.
+    - The user could change the sound of the piano for even more fun while playing the piano. ![Image](./assets/images/cogs.jpg)
 - A user is going to a Birthday party where there will be a piano. The user wants to impress people by playing Happy Birthday on the piano. The user can learn and practice the notes before hand on this website.
-- A user is singing to a child and wants music to accompany. The user can play the songs from this website while singing or even have the child play/learn the song.
+- A user is singing to a child and wants music to accompany. 
+    - The user can play the songs from this website while singing or even have the child play/learn the song. ![Image](./assets/images/user_stories/click-play.jpg)
+- A user starts the site, goes directly to the piano and is unsure what they can do with the piano. 
+    - At any point the user is unsure what to do a user can click on the home button in the header or the Keys icon in the footer. This will return them to the landing page where they can read the instructions for the site.
 
+![Image](./assets/images/user_stories/home.jpg) ![Image](./assets/images/user_stories/icon.jpg) ![Image](./assets/images/user_stories/landing-page.jpg)
+- A user wants to know more about the site.
+    - The user clicks on the about button located in the footer. ![Image](./assets/images/user_stories/about-btn.jpg) ![Image](./assets/images/user_stories/about.jpg)
 ## Features
 
 ### Existing Features
