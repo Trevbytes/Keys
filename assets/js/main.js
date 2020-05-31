@@ -302,16 +302,18 @@ changes to 'Stop Recording'. The 'startRecording' function is called, which rese
 the arrays 'recordInput' and 'playRecording'. */
 function record() {
   if (recording()) {
-    $("#record-btn")
-      .removeClass("active active-r")
-    $('#record-btn').html($('#record-btn').html().replace('Stop Recording','Record'));
+    $("#record-btn").removeClass("active active-r");
+    $("#record-btn").html(
+      $("#record-btn").html().replace("Stop Recording", "Record New")
+    );
     enableTeach();
     enableSongChoice();
     enableActiveSong();
   } else {
-    $("#record-btn")
-      .addClass(" active-r active");
-    $('#record-btn').html($('#record-btn').html().replace('Record','Stop Recording'));
+    $("#record-btn").addClass(" active-r active");
+    $("#record-btn").html(
+      $("#record-btn").html().replace("Record New", "Stop Recording")
+    );
     startRecording();
     disableTeach();
     disableSongChoice();
@@ -346,8 +348,8 @@ function switchInstrument(instrumentnum, soundID) {
   } else {
     noteLength = 2;
   }
-  $('.instrument').removeClass("active");
-  $("#"+soundID).addClass("active");
+  $(".instrument").removeClass("active");
+  $("#" + soundID).addClass("active");
 }
 /*-- /Button Functions --*/
 /*------------- Jquery functions to enable/disable/hide/show elements -----------------*/
@@ -419,19 +421,19 @@ function enableActiveSong() {
   $(".active-song").attr("tabindex", "1");
 }
 
-function notesOn(notesOnID) {    
+function notesOn(notesOnID) {
   $(".notetext").show();
   $(".notetext-b").show();
-  $('.notes-toggle').removeClass("active");
-  $("#"+notesOnID).addClass("active");
+  $(".notes-toggle").removeClass("active");
+  $("#" + notesOnID).addClass("active");
 }
 
 function notesOff(notesOffID) {
   $(".notetext").hide();
   $(".notetext-b").hide();
-  if (notesOffID!="runtime") {
-    $('.notes-toggle').removeClass("active");
-    $("#"+notesOffID).addClass("active");
+  if (notesOffID != "runtime") {
+    $(".notes-toggle").removeClass("active");
+    $("#" + notesOffID).addClass("active");
   }
 }
 
