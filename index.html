@@ -68,98 +68,118 @@
     </header>
     <!--Landing Page, Instructions Container-->
     <main class="container">
-        <div class="row rounded" >
-        <article class="col-md-12 text-light mt-8 landing-info text-center">        
-            <h2 class="mt-2">Welcome to Keys!</h2>
-            <p>
-                Have you ever wondered how to play a tune like “Happy Birthday” on 
-                the piano?
-                This is the site for you! <br/>
-                Keys' purpose is to teach simple tunes by guiding you, note by note, 
-                through a tune. <br/>
-                As an added feature, you can record your own tune to show off or even
-                teach to others!
-            </p>
-            <h2 class="text-info instructions">Instructions</h2>
-            <p class="instructions">
-                Rotate your screen if your are using a mobile device. <br/> 
-                After clicking 
-                <button class="btn btn-success btn-sm" disabled>Start Playing</button> 
-                on this page you will be taken to the simple piano. There 
-                you can play the piano or click on the following buttons:
-            </p>
-        </article>
-        <article class="col-md-6 text-light mt-8 landing-info">
-            <h4 class="text-success">Select a Tune 
-                <span class="dropdown dropleft">
-                  <button class="btn btn-success dropdown-toggle dropleft btn-sm" disabled>
-                  </button>
-                </span>
-            </h4>
-            <p> 
-              Choose your tune, or the "Record your own!" option.                
-            </p>
-            <h4 class="text-success">Play a Tune
-                <span>
-                  <button class="btn btn-success btn-sm" disabled>
-                    <i class="fas fa-play text-dark"></i>
-                    <i class="fas fa-music hvr-icon"></i> Happy Birthday
-                    <i class="fas fa-music hvr-icon"></i>
-                  </button>
-                </span>               
-            </h4>
-            <p>
-                Click to play the selected tune. Clicking the button again will restart the
-                tune.
-            </p>
-            <h4 class="text-primary">Learn the Selected Tune
-                <span>
-                  <button class="btn btn-primary btn-sm" disabled> Teach Me</button>
-                </span>
-            </h4>
-            <p>
-                Follow the displayed notes on the keyboard. If the last note you played was
-                wrong, Keys will repeat the correct note until you get it right.
-            </p>
-        </article>
-        <article class="col-md-6 text-light mt-8 landing-info">
-            <h4 class="text-danger">Record
-                <span>
-                  <button class="btn btn-danger btn-sm" disabled> Record New</button>
-                </span>
-            </h4>
-            <p>
-                When “Record your own!” is selected this button will appear. After clicking 
-                the button all keys you play will be recorded. To stop recording, 
-                click <span><button class="btn btn-danger btn-sm" disabled> Stop Recording
-                </button></span>. Your tune is now saved and can be played 
-                back or taught just as the preset tunes. 
-            </p>
-            <h4 class="text-danger">Stop
-                <span>
-                    <button class="btn btn-danger btn-sm" disabled> Stop
-                      <i class="fas fa-square text-dark"></i>
-                    </button>
-                </span>
-            </h4>
-            <p>The stop button will stop any tunes being taught or being played.</p>
-            <h4 class="text-primary">Settings
-                <i class="fas fa-cogs text-primary fa-sm"></i>
-            </h4>
-            <p>
-                Click on the settings button to open the settings window. Here you can
-                change the sound the piano makes. You can also turn on or off the note 
-                names on the piano. 
-            </p>
-        </article>
-        <div class="col-md-12 text-light mt-8 landing-info">
-            <h6 class="text-warning">Please Note</h6>
-            <p>
-                The Keys piano works on all modern browsers such as Firefox, Chrome, 
-                Opera, Safari. If you are unable to view the piano, consider upgrading 
-                your browser.
-            </p>
+        <div class="row" >
+            <div class="col text-light mt-8 landing-info landing-info-top text-center">        
+                <h2 class="mt-2">Welcome to Keys!</h2>
+                <p>
+                  Have you ever wondered how to play a tune like “Happy Birthday” on 
+                  the piano?
+                  This is the site for you! <br/>
+                  Keys' purpose is to teach simple tunes by guiding you, note by note, 
+                  through a tune. <br/>
+                  As an added feature, you can record your own tune to show off or even
+                  teach to others!
+                </p>
+            </div>
         </div>
+        <div class="row">
+            <div class="col text-light landing-info text-center">
+                <h2 class="text-info instructions">Instructions</h2>
+                <p class="instructions">
+                  Rotate your screen if your are using a mobile device. <br/> 
+                  After clicking 
+                  <button class="btn btn-success btn-sm" disabled>Start Playing</button> 
+                  on this page you will be taken to the simple piano. There 
+                  you can play the piano or click on the following buttons:
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <article class="col-md-6 text-light mt-8 landing-info">
+                <h4 class="text-success">Select a Tune 
+                    <span class="dropdown dropleft">
+                      <button 
+                       class="btn btn-success dropdown-toggle dropleft btn-sm" disabled>
+                      </button>
+                    </span>
+                </h4>
+                <p> 
+                  Choose your tune, or the "Record your own!" option.                
+                </p>
+            </article>
+            <article class="col-md-6 text-light landing-info">
+                <h4 class="text-success">Play a Tune
+                    <span>
+                      <button class="btn btn-success btn-sm" disabled>
+                        <i class="fas fa-play text-dark"></i>
+                        <i class="fas fa-music hvr-icon"></i> Happy Birthday
+                        <i class="fas fa-music hvr-icon"></i>
+                      </button>
+                    </span>               
+                </h4>
+                <p>
+                  Click to play the selected tune. Clicking the button again will restart 
+                  the tune.
+                </p>
+            </article>
+            <article class="col-md-6 text-light landing-info">
+                <h4 class="text-primary">Learn the Selected Tune
+                    <span>
+                      <button class="btn btn-primary btn-sm" disabled> Teach Me</button>
+                    </span>
+                </h4>
+                <p>
+                  Follow the displayed notes on the keyboard. If the last note you played 
+                  was wrong, Keys will repeat the correct note until you get it right.
+                </p>
+            </article>
+            <article class="col-md-6 text-light landing-info">
+                <h4 class="text-danger">Record
+                    <span>
+                      <button class="btn btn-danger btn-sm" disabled> Record New</button>
+                    </span>
+                </h4>
+                <p>
+                  When “Record your own!” is selected this button will appear. After 
+                  clicking the button all keys you play will be recorded. To stop recording, 
+                  click 
+                  <span>
+                    <button class="btn btn-danger btn-sm" disabled>Stop Recording</button>
+                  </span>. 
+                  Your tune is now saved and can be played 
+                  back or taught just as the preset tunes. 
+                </p>
+            </article>
+            <article class="col-md-6 text-light landing-info order-last">
+                <h4 class="text-danger">Stop
+                    <span>
+                      <button class="btn btn-danger btn-sm" disabled> Stop
+                        <i class="fas fa-square text-dark"></i>
+                      </button>
+                    </span>
+                </h4>
+                <p>The stop button will stop any tunes being taught or being played.</p>
+            </article>
+            <article class="col-md-6 text-light landing-info">
+                <h4 class="text-primary">Settings
+                    <i class="fas fa-cogs text-primary fa-sm"></i>
+                </h4>
+                <p>
+                  Click on the settings button to open the settings window. Here you can
+                  change the sound the piano makes. You can also turn on or off the note 
+                  names on the piano. 
+                </p>
+            </article>
+        </div>
+        <div class="row">
+            <div class="col text-light mt-8 landing-info">
+                <h6 class="text-warning">Please Note</h6>
+                <p>
+                  The Keys piano works on all modern browsers such as Firefox, Chrome, 
+                  Opera, Safari. If you are unable to view the piano, consider upgrading 
+                  your browser.
+                </p>
+            </div>
         </div>
     </main>
     <!--/Instructions Container-->
