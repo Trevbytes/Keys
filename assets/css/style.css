@@ -226,7 +226,7 @@ is used in some apps as a preview for the site --*/
   }
 }
 
-@media screen and (min-width: 1600px) {
+@media screen and (min-width: 1200px) {
   .white {
     --width: 100px;
     background-color: white;
