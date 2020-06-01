@@ -13,7 +13,7 @@ Keys is a single webpage with an interactive keyboard built with Javascript with
 
 This site was initially designed to teach the user simple tunes on the piano. The user would choose a song and the piano would play a note that the user would then play, this would repeat until the full tune is played.
 
-The site is designed for mobile phones in landscape view. Keeping the layout of the site simple was crucial as to not confuse the user or overwhelm the user with options. When the piano is not useable or can be larger a prompt lets the use know what they can do to have a better user experience.
+The site is designed for mobile phones in landscape view. Larger devices may be used but there is no content to fill the empty space of larger screens. Keeping the layout of the site simple was crucial as to not confuse the user or overwhelm the user with options. When the piano is not useable or can be larger, a prompt lets the use know what they can do for a better user experience.
 
 With a recording feature added, this site has evolved to also cater to users wanting to teach a song to another user.
 
@@ -116,6 +116,7 @@ All songs chosen in this project are in the Public Domain to avoid any issues wi
 - [GitHub](https://github)
 
   - The project uses **GitHub** for hosting the webpage and the repository.
+  - In this project I learned how create new branches of a repository for development of the project. The landing page of this project was developed in a seperate branch and then merged with the main branch when finished. A development branch was then created to work out remaining bugs and add the final polish to the project before being submitted for assesment.
 
 - [Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools)
 
@@ -138,9 +139,9 @@ This project has been tested for display responsiveness throughout development. 
 
 All modern browsers are supported. Older browsers such as IE are not suppported due mainly to the use of the Audiosynth JS file and CSS variables used when creating the piano.
 
-The testing and debugging of this project was doing extensively in Chrome Dev Tools. The process would typically go as follows:
+The testing and debugging of this project was done extensively in Chrome Dev Tools throughout the project. The process would typically go as follows:
 
-- Create a function.
+- Create a function/feature.
 - Test that function and try to break the function using unexpected input and having friends and family test the function.
 - Fix the bugs. During this project I learned how useful 'console.log' can be when trying to figure out why a function is not working as intended.
 - Create next function.
@@ -154,7 +155,7 @@ The known bug that has not been fixed can be replicated by clicking on the 'Reco
 
 Another interesting unintended feature was left in the site. When in the 'Teach Me' function a user can click as many keys as they want as long as the **last key** they played was correct. This was left and not fixed as this allows users to add flare to their tune, such as an extra note in Happy Birthday if the receiver of the Happy Birthday tune has a long name.
 
-This project have been reviewed/tested by a senior web developer. A mentor provided by Code Institute during my studies.
+This project have been reviewed/tested by an experienced web developer. A mentor provided by Code Institute during my studies.
 
 This project has been peer reviewed/tested within Code Institute's Slack channel.
 
@@ -166,7 +167,7 @@ Some of the main testing of features included:
 - Cycle through instrument choices and adjust note length so that the audio sounds alright on all instruments.
 - Checked that the text for notes were properly displayed on all screen sizes.
 - Checked that the recording feature was intuitive. Buttons are disabled if they do nothing and enabled when usable.
-- Checked that a recorded song is saved until recorded over(or website is refreshed), even when changing songs or pressing 'stop'.
+- Checked that a recorded song is saved until recorded over, even when changing songs or pressing 'stop'.
 
 - The HTML and CSS code has been validated by [W3C Markup Validation Service](https://validator.w3.org) and [JShint](https://jshint.com/)
 
