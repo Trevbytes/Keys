@@ -15,5 +15,6 @@
   ],
   "theme_color": "white",
   "background_color": "#ebc246",
-  "start_url": "./piano.html"
+  "start_url": "./piano.html",
+   "display": "standalone"
 }
